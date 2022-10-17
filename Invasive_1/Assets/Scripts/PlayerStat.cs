@@ -58,6 +58,16 @@ namespace RNS
             }
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.layer.Equals(6))
+            {
+                oxygen += 25;
+                oxygenBar.value = oxygen;
+
+            }
+        }
+
         private void OnDeath()
         {
             oxygen = 70;
@@ -67,5 +77,7 @@ namespace RNS
                 killed = false;
             }
         }
+
+
     }
 }
