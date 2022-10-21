@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029017467, g: 0.025482507, b: 0.02269552, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1636,6 +1636,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5010567260767992366, guid: 3d73522da2cb4674796f170ffb94baff, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5010567260767992367, guid: 3d73522da2cb4674796f170ffb94baff, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -22850,6 +22854,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1206368452 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5010567260767992367, guid: 3d73522da2cb4674796f170ffb94baff, type: 3}
+  m_PrefabInstance: {fileID: 84274815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1218029570
 Mesh:
   m_ObjectHideFlags: 0
@@ -40204,6 +40213,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1770220034362666466, guid: ce3122b2b485ca342902291aaf0c39d3, type: 3}
+      propertyPath: targetTransform
+      value: 
+      objectReference: {fileID: 1206368452}
     - target: {fileID: 1770220034362666467, guid: ce3122b2b485ca342902291aaf0c39d3, type: 3}
       propertyPath: m_Name
       value: Camera Holder
