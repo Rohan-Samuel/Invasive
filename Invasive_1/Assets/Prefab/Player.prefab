@@ -100,7 +100,7 @@ MonoBehaviour:
   animatorHandler: {fileID: 0}
   rigidbody: {fileID: 0}
   normalCamera: {fileID: 0}
-  movementSpeed: 3
+  movementSpeed: 4
   rotationSpeed: 8
 --- !u!114 &5010567260767992366
 MonoBehaviour:
