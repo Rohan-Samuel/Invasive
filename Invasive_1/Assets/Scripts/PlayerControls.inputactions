@@ -82,6 +82,17 @@
                 },
                 {
                     "name": "",
+                    "id": "c0f3b246-7362-4e11-9637-6c180fd7e336",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6e1bea64-3788-43a8-907f-c8f32d40101c",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
@@ -99,6 +110,45 @@
                     "processors": "NormalizeVector2",
                     "groups": "",
                     "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player Actions",
+            "id": "8ac54d16-2109-4c2f-a726-aaab353f9454",
+            "actions": [
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "2172ce63-9f94-458c-8de8-c1483c631264",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3a9b0628-252d-4303-957b-f07d4252415b",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "138623d1-47d6-4ade-80eb-5da40ce51d55",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
