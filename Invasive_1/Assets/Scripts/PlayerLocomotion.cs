@@ -50,7 +50,7 @@ namespace RNS
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = projectedVelocity;
 
-           //animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0);//
+           animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0);
 
             if (animatorHandler.canRotate)
                 {
