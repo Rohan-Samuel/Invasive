@@ -12,6 +12,10 @@ namespace RNS
         public float mouseX;
         public float mouseY;
 
+        public bool b_Input;
+        public bool dashFlag;
+        public bool isInteracting;
+
         PlayerControls inputActions;
         CameraHandler cameraHandler;
 
@@ -32,6 +36,12 @@ namespace RNS
                 cameraHandler.FollowTarget(delta);
                 cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
             }
+
+            if (b_Input)
+            {
+                Debug.Log("cmon man");
+            }
+            
         }
 
         public void OnEnable()
@@ -55,6 +65,7 @@ namespace RNS
         public void TickInput (float delta)
         {
             MoveInput(delta);
+            HandleDashInput(delta);
         }
 
         private void MoveInput (float delta)
@@ -64,6 +75,19 @@ namespace RNS
             moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
             mouseX = cameraInput.x;
             mouseY = cameraInput.y;
+        }
+
+        private void HandleDashInput(float delta)
+        {
+            b_Input = Input.GetKey(KeyCode.LeftShift);
+            
+
+            if (b_Input)
+            {
+                dashFlag = true;
+                Debug.Log("Crouch!");
+            }        
+            
         }
     }
 }
