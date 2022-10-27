@@ -7,10 +7,13 @@ namespace RNS
 {
     public class PlayerStat : MonoBehaviour
     {
-        public float oxygen;
+        public int MAX_OXYGEN = 70;
+        public float oxygen = 70;
         public Slider oxygenBar;
         public bool isAlive;
         public bool killed;
+        public int audioLogs = 0;
+        Vector3 respawnLocation;
         Vector3 originalPos;
 
         // Start is called before the first frame update
@@ -48,10 +51,25 @@ namespace RNS
             if(collision.gameObject.layer.Equals(6))
             {
                 oxygen += 10;
+                if(oxygen > MAX_OXYGEN){
+                    oxygen=MAX_OXYGEN;
+                }
                 oxygenBar.value = oxygen;
             }
 
-            if(collision.gameObject.layer.Equals(7))
+            else if(collision.gameObject.layer.Equals(11))
+            {
+                audioLogs++;
+
+            }
+            
+            else if(collision.gameObject.layer.Equals(12))
+            {
+                respawnLocation = gameObject.transform.position;
+
+            }
+
+            else if(collision.gameObject.layer.Equals(7))
             {
                 killed = true;
                 Debug.Log("Touched");
@@ -63,6 +81,9 @@ namespace RNS
             if (other.gameObject.layer.Equals(6))
             {
                 oxygen += 25;
+                if(oxygen > MAX_OXYGEN){
+                    oxygen=MAX_OXYGEN;
+                }
                 oxygenBar.value = oxygen;
 
             }
@@ -71,8 +92,8 @@ namespace RNS
         private void OnDeath()
         {
             oxygen = 70;
-            gameObject.transform.position = originalPos;
-            if (gameObject.transform.position == originalPos)
+            gameObject.transform.position = respawnLocation;
+            if (gameObject.transform.position == respawnLocation)
             {
                 killed = false;
             }
