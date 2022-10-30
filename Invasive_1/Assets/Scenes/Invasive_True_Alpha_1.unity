@@ -11274,7 +11274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 256551873645807708, guid: 7df71f587778a7645a83ef20198526fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000038146973
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: 256551873645807708, guid: 7df71f587778a7645a83ef20198526fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36685,7 +36685,7 @@ PrefabInstance:
     - target: {fileID: 1770220034362666466, guid: ce3122b2b485ca342902291aaf0c39d3, type: 3}
       propertyPath: targetTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 694174568393840873, guid: 3d73522da2cb4674796f170ffb94baff, type: 3}
     - target: {fileID: 1770220034362666467, guid: ce3122b2b485ca342902291aaf0c39d3, type: 3}
       propertyPath: m_Name
       value: Camera Holder
