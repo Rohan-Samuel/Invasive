@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -396,7 +396,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a115e18884586b545b14c212cc4ca12f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a115e18884586b545b14c212cc4ca12f, type: 3}
       propertyPath: m_LocalScale.x
@@ -744,6 +744,20 @@ CapsuleCollider:
   m_Height: 20
   m_Direction: 1
   m_Center: {x: -0.21, y: 8.97, z: 3.2}
+--- !u!114 &706198303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706198301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fee8315d1dc849bb89a6992eb6d557c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8466771902877032916, guid: afdf98238658f4f2db5cf04a069b73ed, type: 3}
+  obstacleRange: 5
 --- !u!1 &749160161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1379,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1576981828 stripped
 GameObject:
@@ -1491,7 +1505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c006bd7e013ee2c4aab5d886d3a7ea8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransform: {fileID: 1622859024}
+  targetTransform: {fileID: 0}
   cameraTransform: {fileID: 459467132}
   cameraPivotTransform: {fileID: 514816958}
   lookSpeed: 0.08
@@ -1518,11 +1532,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!4 &1622859024 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5010567260767992367, guid: 3d73522da2cb4674796f170ffb94baff, type: 3}
-  m_PrefabInstance: {fileID: 5010567259169351487}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1642204560 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6796069878713285051, guid: a115e18884586b545b14c212cc4ca12f, type: 3}
@@ -1915,3 +1924,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d73522da2cb4674796f170ffb94baff, type: 3}
+--- !u!1 &5010567259169351488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 694174568393840882, guid: 3d73522da2cb4674796f170ffb94baff, type: 3}
+  m_PrefabInstance: {fileID: 5010567259169351487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5010567259169351489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010567259169351488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90359ad6493ec42b087043bed8b796f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
