@@ -1,10 +1,10 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySight : MonoBehaviour
 {
-    public float fieldOFViewAngle = 110f;
+   /* public float fieldOFViewAngle = 110f;
     public bool playerInSight;
     public Vector3 personalLastSighting;
 
@@ -20,7 +20,7 @@ public class EnemySight : MonoBehaviour
 
 
    void Awake(){
-       nav = GetComponent<NavMeshAgent>();
+       nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
        col = GetComponent<SphereCollider>();
        anim = GetComponent<Animator>();
        LastPlayerSighting = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<LastPlayerSighting>();
@@ -73,6 +73,5 @@ public class EnemySight : MonoBehaviour
                playerInSight = false;
            }
        }
-
-}
 */
+}
