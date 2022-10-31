@@ -63,6 +63,8 @@ public class EnemySight : MonoBehaviour
                    }
                }
 
+               int playerLayerZeroStateHash = playerAnim.GetCurrentAnimatorStateInfo(0)nameHash;
+
            }
        }
 
