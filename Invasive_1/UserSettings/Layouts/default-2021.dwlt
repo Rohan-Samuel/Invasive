@@ -163,7 +163,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 66
+>>>>>>> Stashed changes
+=======
+  controlID: 97
 >>>>>>> Stashed changes
 --- !u!114 &6
 MonoBehaviour:
@@ -196,7 +200,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 72
+>>>>>>> Stashed changes
+=======
+  controlID: 98
 >>>>>>> Stashed changes
 --- !u!114 &7
 MonoBehaviour:
@@ -228,7 +236,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 73
+>>>>>>> Stashed changes
+=======
+  controlID: 99
 >>>>>>> Stashed changes
 --- !u!114 &8
 MonoBehaviour:
@@ -385,7 +397,11 @@ MonoBehaviour:
     height: 947
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+<<<<<<< Updated upstream
   m_ActualView: {fileID: 19}
+=======
+  m_ActualView: {fileID: 18}
+>>>>>>> Stashed changes
   m_Panes:
   - {fileID: 19}
 >>>>>>> Stashed changes
@@ -721,6 +737,7 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       m_SelectedIDs:
       m_LastClickedID: 0
       m_ExpandedIDs: 42fbffff
@@ -733,6 +750,15 @@ MonoBehaviour:
         m_UserAcceptedRename: 0
         m_Name:
         m_OriginalName:
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: f89fffff
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+>>>>>>> Stashed changes
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
@@ -850,9 +876,15 @@ MonoBehaviour:
     m_gridOpacity: 0.5
   m_Rotation:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
     speed: 2
     m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+=======
+    m_Target: {x: -0.029538436, y: -0.95223254, z: 0.09777237, w: -0.2880073}
+    speed: 2
+    m_Value: {x: -0.029536562, y: -0.95217216, z: 0.09776617, w: -0.28798902}
+>>>>>>> Stashed changes
   m_Size:
     m_Target: 10
     speed: 2
@@ -860,11 +892,15 @@ MonoBehaviour:
 =======
     m_Target: {x: -0.015232584, y: -0.64198107, z: 0.012667271, w: -0.7666091}
     speed: 2
+<<<<<<< Updated upstream
     m_Value: {x: -0.015230898, y: -0.64190996, z: 0.012665869, w: -0.7665242}
   m_Size:
     m_Target: 2.6643257
     speed: 2
     m_Value: 2.6643257
+>>>>>>> Stashed changes
+=======
+    m_Value: 40.807816
 >>>>>>> Stashed changes
   m_Ortho:
     m_Target: 0
@@ -1108,22 +1144,28 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animations
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\SFU\SFU Fall 2022\IAT410\410_Invasive\Invasive_1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
     m_SelectedIDs: e86b0000
     m_LastClickedID: 27624
     m_ExpandedIDs: 00000000e26b000000ca9a3b
+=======
+    m_SelectedIDs: beb70000
+    m_LastClickedID: 47038
+    m_ExpandedIDs: 00000000beb7000000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1151,7 +1193,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
     m_ExpandedIDs: 00000000e26b0000
+=======
+    m_ExpandedIDs: 
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
