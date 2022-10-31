@@ -7,7 +7,8 @@ namespace RNS
 {
     public class PlayerStat : MonoBehaviour
     {
-        public const int MAX_OXYGEN = 70;
+        public const int MAX_OXYGEN = 100;
+        public const float OXYGEN_REGEN = 1;
         public float oxygen = 70;
         public Slider oxygenBar;
         public bool isAlive;
@@ -17,6 +18,7 @@ namespace RNS
         Vector3 originalPos;
         public AudioSource audioSource;
         public AudioClip clip;
+        public bool isGainingO2 = false;
 
         // Start is called before the first frame update
         void Start()
@@ -29,6 +31,13 @@ namespace RNS
         // Update is called once per frame
         void Update()
         {
+            if (isGainingO2){
+                oxygen= oxygen + OXYGEN_REGEN;
+                if(oxygen > MAX_OXYGEN){
+                    oxygen = MAX_OXYGEN;
+                }
+            }
+
             if (oxygen > 0)
             {
                 oxygen -= Time.deltaTime*2;
@@ -50,17 +59,7 @@ namespace RNS
 
         private void OnCollisionEnter(Collision collision)
         {
-            if(collision.gameObject.layer.Equals(6))
-            {
-                oxygen += 10;
-                if(oxygen > MAX_OXYGEN){
-                    oxygen=MAX_OXYGEN;
-                }
-                oxygenBar.value = oxygen;
-            }
-
-
-            else if(collision.gameObject.layer.Equals(7))
+            if(collision.gameObject.layer.Equals(7))
             {
                 killed = true;
                 Debug.Log("Touched");
@@ -68,15 +67,18 @@ namespace RNS
             }
         }
 
+        private void OnTriggerExit(Collider collision){
+            if(collision.gameObject.layer.Equals(6))
+            {
+                isGainingO2 = false;
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.layer.Equals(6))
             {
-                oxygen += 25;
-                if(oxygen > MAX_OXYGEN){
-                    oxygen=MAX_OXYGEN;
-                }
-                oxygenBar.value = oxygen;
+                isGainingO2 = true;
 
             }
                         
@@ -86,6 +88,7 @@ namespace RNS
 
             }
         }
+
 
         private void OnDeath()
         {
