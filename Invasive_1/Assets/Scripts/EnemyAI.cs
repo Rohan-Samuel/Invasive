@@ -1,22 +1,22 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float turnSpeed = 2f;
+    /*public float turnSpeed = 2f;
     public float turnWaitTime = 5f;
     
     private EnemySight enemySight;
-    private NavMeshAgent nav;
+    private UnityEngine.AI.NavMeshAgent nav;
     private transform player;
     private PlayerHealth plyaerHealth;
-    private LastPlayerSighting last PlayerSighting;
+    private LastPlayerSighting lastPlayerSighting;
     private float turnTimer;
 
     void Awake(){
         enemySight = GetComponent<EnemySight>();
-        nav = GetComponent<NavMeshAgent>();
+        nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag(Tag.player).transform;
         playerHealth = player.GetComponent<PlayerHealth>();
         LastPlayerSighting = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<LastPlayerSighting>();
@@ -40,6 +40,5 @@ public class EnemyAI : MonoBehaviour
 
     void Turning(){
         
-    }
+    }*/
 }
-*/
