@@ -65,7 +65,7 @@ namespace RNS
             
             else if(collision.gameObject.layer.Equals(12))
             {
-                respawnLocation = gameObject.transform.position;
+                respawnLocation = originalPos + Vector3.up;
 
             }
 
@@ -92,8 +92,8 @@ namespace RNS
         private void OnDeath()
         {
             oxygen = 70;
-            gameObject.transform.position = respawnLocation;
-            if (gameObject.transform.position == respawnLocation)
+            gameObject.transform.position = originalPos;
+            if (gameObject.transform.position == originalPos)
             {
                 killed = false;
             }
