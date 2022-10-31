@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -63,6 +63,8 @@ public class EnemySight : MonoBehaviour
                    }
                }
 
+               int playerLayerZeroStateHash = playerAnim.GetCurrentAnimatorStateInfo(0)nameHash;
+
            }
        }
 
@@ -73,3 +75,4 @@ public class EnemySight : MonoBehaviour
        }
 
 }
+*/
