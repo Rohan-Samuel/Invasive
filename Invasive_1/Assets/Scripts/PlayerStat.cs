@@ -8,8 +8,10 @@ namespace RNS
     public class PlayerStat : MonoBehaviour
     {
         public const int MAX_OXYGEN = 100;
+        public const int MIN_OXYGEN = 30;
         public const double OXYGEN_REGEN = .2;
         public float oxygen = 70;
+        public float savedOxygen = 0;
         public Slider oxygenBar;
         public bool isAlive;
         public bool killed;
@@ -90,16 +92,18 @@ namespace RNS
             else if(other.gameObject.layer.Equals(12))
             {
                 respawnLocation = gameObject.transform.position;
-
+                savedOxygen = oxygen;
             }
         }
 
 
         private void OnDeath()
         {
-            oxygen = 70;
-            gameObject.transform.position = originalPos;
-            if (gameObject.transform.position == originalPos)
+            oxygen = savedOxygen;
+            if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
+            
+            gameObject.transform.position = respawnLocation;
+            if (gameObject.transform.position == respawnLocation)
             {
                 killed = false;
             }
