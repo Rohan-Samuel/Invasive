@@ -8,7 +8,7 @@ namespace RNS
     public class PlayerStat : MonoBehaviour
     {
         public const int MAX_OXYGEN = 100;
-        public const float OXYGEN_REGEN = 1;
+        public const double OXYGEN_REGEN = .2;
         public float oxygen = 70;
         public Slider oxygenBar;
         public bool isAlive;
@@ -17,22 +17,22 @@ namespace RNS
         Vector3 respawnLocation;
         Vector3 originalPos;
         public AudioSource audioSource;
-        public AudioClip clip;
         public bool isGainingO2 = false;
-
+        public AudioClip audioLog0;
         // Start is called before the first frame update
         void Start()
         {
             originalPos = gameObject.transform.position;
             oxygenBar.value = oxygen;
             Debug.Log(oxygen);
+            audioSource = GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
         void Update()
         {
             if (isGainingO2){
-                oxygen= oxygen + OXYGEN_REGEN;
+                oxygen= oxygen + (float)OXYGEN_REGEN;
                 if(oxygen > MAX_OXYGEN){
                     oxygen = MAX_OXYGEN;
                 }
@@ -64,6 +64,11 @@ namespace RNS
                 killed = true;
                 Debug.Log("Touched");
                 OnDeath();
+            }
+            else if (collision.gameObject.layer.Equals(11))
+            {
+                Debug.Log("Got Audio Log");
+                audioSource.PlayOneShot(audioLog0, 0.5f);
             }
         }
 
