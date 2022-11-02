@@ -98,8 +98,8 @@ namespace RNS
         private void OnDeath()
         {
             oxygen = 70;
-            gameObject.transform.position = respawnLocation;
-            if (gameObject.transform.position == respawnLocation)
+            gameObject.transform.position = originalPos;
+            if (gameObject.transform.position == originalPos)
             {
                 killed = false;
             }
