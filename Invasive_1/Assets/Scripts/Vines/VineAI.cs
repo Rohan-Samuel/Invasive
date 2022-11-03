@@ -18,6 +18,8 @@ namespace RNS
 
         public Transform target;
 
+        public float turnSpeed = 2f;
+
 
         float DistanceToPlayer()
         {
@@ -27,15 +29,14 @@ namespace RNS
 
         void RotateTowardsPlayer()
         {
-            Vector3 player = target.position;
-            transform.LookAt(target);
+            Vector3 direction = target.position - transform.position;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), turnSpeed * Time.deltaTime);
             animator.SetTrigger("BackToIdle");
         }
 
         void AttackPlayer()
         {
-            Vector3 player = target.position;
-            transform.LookAt(target);
+            
             animator.SetTrigger("OnAttackRange");
         }
 
