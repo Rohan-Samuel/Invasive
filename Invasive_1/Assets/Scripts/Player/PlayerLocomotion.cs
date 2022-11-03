@@ -22,10 +22,10 @@ namespace RNS
         [SerializeField]
         float movementSpeed = 5;
         [SerializeField]
-        float WalkingSpeed = 5;
-        [SerializeField]
-        float SprintSpeed = 10;
-        [SerializeField]
+       // float WalkingSpeed = 5;
+      //  [SerializeField]
+       // float SprintSpeed = 10;
+      //  [SerializeField]
         float rotationSpeed = 10;
 
         void Start()
