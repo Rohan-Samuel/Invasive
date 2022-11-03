@@ -8,11 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-<<<<<<< HEAD
   - Wall
-=======
-  - NavMesh
->>>>>>> 8601089cead3176c0b2738ddfaf35caf607f4a68
   - Water
   - UI
   - Pickup
@@ -22,8 +18,8 @@ TagManager:
   - Controller
   - AudioLog
   - RespawnPoint
-  - PowerBox
-  - 
+  - Obstruction
+  - Target
   - 
   - 
   - 
