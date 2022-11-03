@@ -22,7 +22,6 @@ public class pickup : MonoBehaviour
         
         if (other.gameObject.layer.Equals(10))
             {
-                audioSource.PlayOneShot(clip, 0.5f);
                 Destroy(gameObject);
             }
     }
