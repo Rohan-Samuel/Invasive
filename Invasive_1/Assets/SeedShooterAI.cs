@@ -49,7 +49,7 @@ public class SeedShooterAI : MonoBehaviour
 
         if ( fireRate <=0)
         {
-            fireRate = 1f;
+            fireRate = 2f;
             Shoot();
             
         }
