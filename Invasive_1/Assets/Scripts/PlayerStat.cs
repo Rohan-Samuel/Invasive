@@ -8,7 +8,7 @@ namespace RNS
     public class PlayerStat : MonoBehaviour
     {
         public const int MAX_OXYGEN = 100;
-        public const int MIN_OXYGEN = 30;
+        public const int MIN_OXYGEN = 40;
         public const double OXYGEN_REGEN = .2;
         public float oxygen = 70;
         public float savedOxygen = 0;
@@ -42,7 +42,7 @@ namespace RNS
 
             if (oxygen > 0)
             {
-                oxygen -= Time.deltaTime*2;
+                oxygen -= Time.deltaTime*1;
                 isAlive = true;
             }
             oxygenBar.value = oxygen;
@@ -71,6 +71,10 @@ namespace RNS
             {
                 Debug.Log("Got Audio Log");
                 audioSource.PlayOneShot(audioLog0, 0.5f);
+            }
+            else if (collision.gameObject.layer.Equals(6))
+            {
+                Debug.Log("Got Battery");
             }
         }
 
@@ -101,7 +105,7 @@ namespace RNS
         {
             oxygen = savedOxygen;
             if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
-            
+
             gameObject.transform.position = respawnLocation;
             if (gameObject.transform.position == respawnLocation)
             {
