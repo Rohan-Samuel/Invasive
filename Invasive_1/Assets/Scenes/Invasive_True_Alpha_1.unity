@@ -31679,6 +31679,10 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 694174569124555074, guid: 3d73522da2cb4674796f170ffb94baff, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 5866666021909216657, guid: 638a33b31e6bbed49b5f88b0dfe979ae, type: 3}
     - target: {fileID: 3149868298777182258, guid: 3d73522da2cb4674796f170ffb94baff, type: 3}
       propertyPath: m_audioClip
       value: 
