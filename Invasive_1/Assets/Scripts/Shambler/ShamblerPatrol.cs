@@ -8,7 +8,7 @@ namespace RNS
     {
         public Transform[] waypoints;
         private int currentWaypointIndex = 0;
-        private float speed = 2f;
+        private float speed = 1f;
 
         private void Update()
         {
@@ -20,7 +20,7 @@ namespace RNS
 
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, wp.position, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, wp.position, speed/2 * Time.deltaTime);
                 transform.LookAt(wp.position);
             }
         }

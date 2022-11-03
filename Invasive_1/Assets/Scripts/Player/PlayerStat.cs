@@ -8,8 +8,10 @@ namespace RNS
     public class PlayerStat : MonoBehaviour
     {
         public const int MAX_OXYGEN = 100;
-        public const float OXYGEN_REGEN = 1;
+        public const int MIN_OXYGEN = 40;
+        public const double OXYGEN_REGEN = .2;
         public float oxygen = 70;
+        public float savedOxygen = 0;
         public Slider oxygenBar;
         public bool isAlive;
         public bool killed;
@@ -17,22 +19,22 @@ namespace RNS
         Vector3 respawnLocation;
         Vector3 originalPos;
         public AudioSource audioSource;
-        public AudioClip clip;
         public bool isGainingO2 = false;
-
+        public AudioClip audioLog0;
         // Start is called before the first frame update
         void Start()
         {
             originalPos = gameObject.transform.position;
             oxygenBar.value = oxygen;
             Debug.Log(oxygen);
+            audioSource = GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
         void Update()
         {
             if (isGainingO2){
-                oxygen= oxygen + OXYGEN_REGEN;
+                oxygen= oxygen + (float)OXYGEN_REGEN;
                 if(oxygen > MAX_OXYGEN){
                     oxygen = MAX_OXYGEN;
                 }
@@ -40,7 +42,7 @@ namespace RNS
 
             if (oxygen > 0)
             {
-                oxygen -= Time.deltaTime*2;
+                oxygen -= Time.deltaTime*1;
                 isAlive = true;
             }
             oxygenBar.value = oxygen;
@@ -65,6 +67,15 @@ namespace RNS
                 Debug.Log("Touched");
                 OnDeath();
             }
+            else if (collision.gameObject.layer.Equals(11))
+            {
+                Debug.Log("Got Audio Log");
+                audioSource.PlayOneShot(audioLog0, 0.5f);
+            }
+            else if (collision.gameObject.layer.Equals(6))
+            {
+                Debug.Log("Got Battery");
+            }
         }
 
         private void OnTriggerExit(Collider collision){
@@ -85,16 +96,18 @@ namespace RNS
             else if(other.gameObject.layer.Equals(12))
             {
                 respawnLocation = gameObject.transform.position;
-
+                savedOxygen = oxygen;
             }
         }
 
 
         private void OnDeath()
         {
-            oxygen = 70;
-            gameObject.transform.position = originalPos;
-            if (gameObject.transform.position == originalPos)
+            oxygen = savedOxygen;
+            if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
+
+            gameObject.transform.position = respawnLocation;
+            if (gameObject.transform.position == respawnLocation)
             {
                 killed = false;
             }
