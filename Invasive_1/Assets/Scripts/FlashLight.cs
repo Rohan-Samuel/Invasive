@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class FlashLight : MonoBehaviour
 {
-    private GameObject follow;
+    private Transform follow;
+    [SerializeField]
+    float turnSpeed = 0.2f;
+
     // Start is called before the first frame update
     void Start()
     {
-        follow = GetComponent<GameObject>();
+        follow = transform.parent;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = follow.transform.position;
-        
+        Vector3 direction = follow.position - transform.position;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(-direction), turnSpeed * Time.deltaTime);
+
     }
 }

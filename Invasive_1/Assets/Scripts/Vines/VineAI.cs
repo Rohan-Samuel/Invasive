@@ -44,7 +44,7 @@ namespace RNS
         void Start()
         {
             animator = GetComponent<Animator>();
-
+            target = GameObject.FindGameObjectWithTag("Player").transform;
             fsm = new StateMachine(this);
 
             fsm.AddState("Listen", new State());

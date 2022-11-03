@@ -16,7 +16,7 @@ namespace RNS
 
         public static CameraHandler singleton;
 
-        public float lookSpeed = 0.1f;
+        public float lookSpeed = 0.2f;
         public float followSpeed = 0.1f;
         public float pivotSpeed = 0.3f;
 
@@ -27,7 +27,7 @@ namespace RNS
         public float minimumPivot = -35;
         public float maximumPivot = 35;
 
-        public float cameraSphereRadius = 0.2f;
+        public float cameraSphereRadius = 0.4f;
         public float cameraCollisionOffSet = 0.2f;
         public float minimumCollisionOffset = 0.2f;
 
