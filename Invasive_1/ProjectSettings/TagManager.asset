@@ -8,18 +8,30 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - Wall
+=======
+  - 
+>>>>>>> 18bbcda63485286f403399dc696508bc3cc1edbb
   - Water
   - UI
-  - Pickup
-  - Enemy
   - 
   - 
+<<<<<<< HEAD
   - Controller
   - AudioLog
   - RespawnPoint
   - Obstruction
   - Target
+=======
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+>>>>>>> 18bbcda63485286f403399dc696508bc3cc1edbb
   - 
   - 
   - 

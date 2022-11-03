@@ -7,6 +7,8 @@ public class SeedShooterAI : MonoBehaviour
 {
 
     public float rotationSpeed = 2f;
+    [SerializeField]
+    GameObject projectile;
 
     private StateMachine fsm;
     public float hearingRange = 6f;
@@ -14,7 +16,14 @@ public class SeedShooterAI : MonoBehaviour
 
     private Animator animator;
 
-    public Transform target;
+    Transform target;
+    [SerializeField]
+    Transform shootPoint;
+    [SerializeField]
+    float turnSpeed = 1f;
+
+    float fireRate = 1f;
+    bool shooting = true;
 
 
     float DistanceToPlayer()
@@ -25,20 +34,32 @@ public class SeedShooterAI : MonoBehaviour
 
     void RotateTowardsPlayer()
     {
-        Vector3 player = target.position;
+        Vector3 direction = target.position - transform.position;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), turnSpeed * Time.deltaTime);
         transform.LookAt(target);
         animator.SetTrigger("BackToIdle");
     }
 
     void AttackPlayer()
     {
-        Vector3 player = target.position;
-        transform.LookAt(target);
+        Vector3 direction = target.position - transform.position;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), turnSpeed * Time.deltaTime);
         animator.SetTrigger("OnAttackRange");
+        fireRate -= Time.deltaTime;
+
+        if ( fireRate <=0)
+        {
+            fireRate = 1f;
+            Shoot();
+            
+        }
+        
+        
     }
 
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponentInChildren<Animator>();
 
         fsm = new StateMachine(this);
@@ -86,5 +107,12 @@ public class SeedShooterAI : MonoBehaviour
     void Update()
     {
         fsm.OnLogic();
+
+    }
+
+    void Shoot()
+    {
+        Instantiate(projectile, shootPoint.position, shootPoint.rotation);
     }
 }
+
