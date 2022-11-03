@@ -25,7 +25,6 @@ namespace RNS
         {
             originalPos = gameObject.transform.position;
             oxygenBar.value = oxygen;
-            Debug.Log(oxygen);
         }
 
         // Update is called once per frame
