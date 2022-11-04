@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 24d796376f4977a40bf2d5184d430437, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: c4a4a3a11d4e8b7488c0440e007aa762, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -6042,7 +6042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314432836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.390625, y: 0, z: -30.530273}
+  m_LocalPosition: {x: 22.390625, y: 21, z: -30.530273}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6766,7 +6766,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6824,7 +6824,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406931797}
   m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: -29.54, y: 144.8, z: -130.3}
+  m_LocalPosition: {x: -29.54, y: 385, z: -130}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21598,7 +21598,6 @@ GameObject:
   m_Component:
   - component: {fileID: 619629058}
   - component: {fileID: 619629059}
-  - component: {fileID: 619629060}
   m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
@@ -21683,18 +21682,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &619629060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619629057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c08517f626ce3f04db3da6de57f81c78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &623936466
 GameObject:
   m_ObjectHideFlags: 0
