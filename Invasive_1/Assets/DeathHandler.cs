@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class DeathHandler : MonoBehaviour
 {
@@ -23,6 +25,8 @@ public class DeathHandler : MonoBehaviour
         if (vine1 == null && vine2 == null && vine3 == null)
         {
             animator.SetTrigger("OnDeath");
+            SceneManager.LoadScene(2);
+
         }
     }
 }
