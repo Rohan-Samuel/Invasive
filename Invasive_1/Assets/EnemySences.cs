@@ -21,7 +21,7 @@ public class EnemySences : MonoBehaviour
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
