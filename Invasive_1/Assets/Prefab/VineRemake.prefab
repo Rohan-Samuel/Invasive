@@ -352,7 +352,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: f4a878ae01096834d87ef1f18e21d0a1, type: 3}
+  - {fileID: 2100000, guid: fd1a555ad9bc88e47a8333b2f393165a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -500,6 +500,7 @@ MonoBehaviour:
   hearingRange: 8
   attackRange: 2.5
   target: {fileID: 6860581882431284300, guid: 3801a85d245570a4087a03967158df29, type: 3}
+  turnSpeed: 2
 --- !u!114 &367495982
 MonoBehaviour:
   m_ObjectHideFlags: 0
