@@ -6,8 +6,8 @@ public class FlashLight : MonoBehaviour
 {
     private Transform follow;
     [SerializeField]
-    float turnSpeed = 0.2f;
-
+    float turnSpeed = 0.02f;
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -19,4 +19,12 @@ public class BossProjectile : MonoBehaviour
         rb.AddForce(direction * speed * Time.deltaTime);
 
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer.Equals(6))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
