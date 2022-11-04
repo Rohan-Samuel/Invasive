@@ -23,6 +23,7 @@ public class PowerBoxHandler : MonoBehaviour
         {
 
             Destroy(vines.gameObject);
+            
         }
     }
 }
