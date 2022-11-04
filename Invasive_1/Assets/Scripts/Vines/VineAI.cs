@@ -11,8 +11,8 @@ namespace RNS
         public float rotationSpeed = 2f;
 
         private StateMachine fsm;
-        public float hearingRange = 6f;
-        public float attackRange = 3f;
+        public float hearingRange = 14f;
+        public float attackRange = 7f;
 
         private Animator animator;
 
@@ -29,15 +29,20 @@ namespace RNS
 
         void RotateTowardsPlayer()
         {
+            animator.SetTrigger("BackToIdle");
+
             Vector3 direction = target.position - transform.position;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), turnSpeed * Time.deltaTime);
-            animator.SetTrigger("BackToIdle");
+            
         }
 
         void AttackPlayer()
         {
+
+
             
             animator.SetTrigger("OnAttackRange");
+
         }
 
 
@@ -55,7 +60,7 @@ namespace RNS
             fsm.AddState("AttackPlayer", new State(
                 onLogic: (state) => AttackPlayer())) ;
 
-            fsm.SetStartState("Listen");
+            fsm.SetStartState("LookAtPlayer");
 
             
 
@@ -80,7 +85,7 @@ namespace RNS
             fsm.AddTransition(new Transition(
                "AttackPlayer",
                "LookAtPlayer",
-               (transition) => DistanceToPlayer() > attackRange
+               (transition) => !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")
                ));
             
             fsm.Init();
