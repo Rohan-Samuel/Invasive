@@ -31,13 +31,19 @@ public class EnemySences : MonoBehaviour
 
         if (Vector3.Angle(transform.forward, playerTarget) <viewAngle / 2){
             float distanceToTarget = Vector3.Distance(transform.position, player.transform.position);
-            if(distanceToTarget <= viewRadius){
+            while(distanceToTarget <= viewRadius){
                 if (Physics.Raycast(transform.position, playerTarget, distanceToTarget, obstacleMask) == false){
                     Debug.Log("I have seen you!");
                     agent.SetDestination(target.position);
                 }
+                
             }
+
+            
+            
         }
+        Debug.Log("I don't see you!");
+            
         
     }
 }
