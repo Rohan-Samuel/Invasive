@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// https://www.youtube.com/watch?v=ho7-pVNU62g&t=395s
+
 public class EnemySences : MonoBehaviour
 {
     public float viewRadius;
@@ -20,8 +22,8 @@ public class EnemySences : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        // agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        // player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -31,10 +33,11 @@ public class EnemySences : MonoBehaviour
 
         if (Vector3.Angle(transform.forward, playerTarget) <viewAngle / 2){
             float distanceToTarget = Vector3.Distance(transform.position, player.transform.position);
-            while(distanceToTarget <= viewRadius){
+            if(distanceToTarget < viewRadius){
                 if (Physics.Raycast(transform.position, playerTarget, distanceToTarget, obstacleMask) == false){
                     Debug.Log("I have seen you!");
                     agent.SetDestination(target.position);
+                    
                 }
                 
             }
@@ -43,7 +46,8 @@ public class EnemySences : MonoBehaviour
             
         }
         Debug.Log("I don't see you!");
-            
+        // Physics.Raycast(transform.position, playerTarget, distanceToTarget, obstacleMask) == true;
         
+
     }
 }
