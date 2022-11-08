@@ -4,64 +4,61 @@ using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
-    public float radius;
-    [Range (0, 360)]
-    public float angle;
-
-    public GameObject playerRef;
+    public float viewRadius;
+    [Range(0, 360)]
+    public float viewAngle;
 
     public LayerMask targetMask;
-    public LayerMask obstructionMask;
+    public LayerMask obstacleMask;
+    [HideInInspector]
+    public List<Transform> visibleTarget = new List<Transform>();
 
-    public bool canSeePlayer;
+    UnityEngine.AI.NavMeshAgent agent;
+    private float speed = 1f;
+    public Transform[] waypoints;
+    private int currentWaypointIndex = 0;
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-        
-        playerRef = GameObject.FindGameObjectWithTag("Player");
-        StartCoroutine(FOVRoutine());
-
+    void start(){
+        StartCoroutine ("FindTargetWithDelay", .2f);
     }
 
-    private IEnumerator FOVRoutine()
-    {
-
-        WaitForSeconds wait = new WaitForSeconds(0.2f);
-
-        while(true)
-        {
-            yield return wait;
-            FieldOfViewCheck();
+    IEnumerator FindTargetWithDelay (float delay){
+        while(true){
+            yield return new WaitForSeconds (delay);
+            FindVisibleTarget ();
         }
     }
 
-    private void FieldOfViewCheck()
-    {
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
-
-        if(rangeChecks.Length !=0)
-        {
-            Transform target = rangeChecks[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
-
-            if(Vector3.Angle(transform.forward, directionToTarget) < angle/2)
-            {
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
-                if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
-                {
-                    canSeePlayer = true;
-                
+    void FindVisibleTarget(){
+        Collider[] targetInViewRadius = Physics.OverlapSphere (transform.position, viewRadius, targetMask);
+        Transform wp = waypoints[currentWaypointIndex];
+        // agent.isStopped = true;
+        for (int i=0; i<targetInViewRadius.Length; i++){
+            Transform target = targetInViewRadius[i].transform;
+            Vector3 dirToTarget = (target.position - transform.position).normalized;
+            if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2){
+                float dstToTarget = Vector3.Distance (transform.position, target.position);
+                if (!Physics.Raycast ( transform.position, dirToTarget, dstToTarget, obstacleMask)){
+                    Debug.Log("I have seen you!");
+                    agent.isStopped = false;
+                    transform.position = Vector3.MoveTowards(transform.position, wp.position, speed/2 * Time.deltaTime);
+                    transform.LookAt(wp.position);
+                   
                 }
                 else{
-                    canSeePlayer = false;
+                    
+                    currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
                 }
-            }
-            else if (canSeePlayer){
-                canSeePlayer = false;
+            
             }
         }
+    }
+
+    public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal){
+        if (!angleIsGlobal){
+            angleInDegrees += transform.eulerAngles.y;
+        }
+        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 
 }

@@ -6,30 +6,23 @@ using UnityEditor;
 
 public class FieldOfViewEditor : Editor
 {
-    private void OnSceneGUI()
+
+     void OnSceneGUI()
     {
         FieldOfView fov = (FieldOfView) target;
-        Handles.DrawWireArc(fov.transform.position, Vector3.up, Vector3.forward, 360, fov.radius);
+        Handles.color = Color.white;
+        Handles.DrawWireArc(fov.transform.position, Vector3.up, Vector3.forward, 360, fov.viewRadius);
+        Vector3 viewAngleA = fov.DirFromAngle (-fov.viewAngle / 2, false);
+        Vector3 viewAngleB = fov.DirFromAngle (fov.viewAngle / 2, false);
 
-        Vector3 viewAngle01 = DirectionFromAngle(fov.transform.eulerAngles.y, -fov.angle / 2);
-        Vector3 viewAngle02 = DirectionFromAngle(fov.transform.eulerAngles.y, fov.angle / 2);
+        Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleA * fov.viewRadius);
+        Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleB * fov.viewRadius);
 
-        Handles.color = Color.yellow;
-        Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngle01 * fov.radius);
-        Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngle02 * fov.radius);
-
-        if (fov.canSeePlayer)
-        {
-            Handles.color = Color.green;
-            Handles.DrawLine (fov.transform.position, fov.playerRef.transform.position);
+        Handles.color = Color.red;
+        foreach (Transform visibleTarget in fov.visibleTarget){
+            Handles.DrawLine (fov.transform.position, visibleTarget.position);
+            
         }
-    }
-
-    private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
-    {
-        angleInDegrees += eulerY;
-
-        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
    
 }
