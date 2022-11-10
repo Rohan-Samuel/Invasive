@@ -120,7 +120,7 @@
             "id": "8ac54d16-2109-4c2f-a726-aaab353f9454",
             "actions": [
                 {
-                    "name": "Dash",
+                    "name": "Crouch",
                     "type": "Button",
                     "id": "2172ce63-9f94-458c-8de8-c1483c631264",
                     "expectedControlType": "Button",
@@ -137,7 +137,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -148,7 +148,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

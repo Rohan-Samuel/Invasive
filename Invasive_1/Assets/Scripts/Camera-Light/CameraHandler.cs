@@ -33,6 +33,7 @@ namespace RNS
 
         private void Awake()
         {
+            Application.targetFrameRate = 60;
             singleton = this;
             myTransform = transform;
             defaultPosition = cameraTransform.localPosition.z;
