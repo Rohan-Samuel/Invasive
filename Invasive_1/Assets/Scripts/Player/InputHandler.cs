@@ -13,7 +13,10 @@ namespace RNS
         public float mouseY;
 
         public bool b_Input;
-        public bool dashFlag;
+
+        public bool crouchFlag;
+        public bool crouchHoldFlag;
+        public float crouchInputTimer;
         public bool isInteracting;
 
         PlayerControls inputActions;
@@ -65,7 +68,7 @@ namespace RNS
         public void TickInput (float delta)
         {
             MoveInput(delta);
-            HandleDashInput(delta);
+            HandleCrouchInput(delta);
         }
 
         private void MoveInput (float delta)
@@ -77,16 +80,25 @@ namespace RNS
             mouseY = cameraInput.y;
         }
 
-        private void HandleDashInput(float delta)
+        private void HandleCrouchInput(float delta)
         {
-            b_Input = Input.GetKey(KeyCode.LeftShift);
+            b_Input = inputActions.PlayerActions.Crouch.phase == UnityEngine.InputSystem.InputActionPhase.Performed;
             
 
             if (b_Input)
             {
-                dashFlag = true;
-                Debug.Log("Crouch!");
-            }        
+                crouchInputTimer += delta;
+                crouchHoldFlag = true;
+            }
+            else
+            {
+                if(crouchInputTimer > 0 && crouchInputTimer < 0.5f)
+                {
+                    crouchHoldFlag = false;
+                    crouchFlag = true;
+                }
+                crouchInputTimer = 0;
+            }
             
         }
     }

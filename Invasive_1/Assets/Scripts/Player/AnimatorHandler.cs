@@ -6,7 +6,9 @@ namespace RNS
     public class AnimatorHandler : MonoBehaviour
     {
         public Animator anim;
+        [SerializeField]
         int vertical;
+        [SerializeField]
         int horizontal;
         public bool canRotate;
 
@@ -18,7 +20,7 @@ namespace RNS
 
         }
 
-        public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement)
+        public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement, bool isCrouching)
         {
             #region Vertical 
             float v = 0;
@@ -72,6 +74,21 @@ namespace RNS
                 h = 0;
             }
             #endregion
+
+            if (isCrouching)
+            {
+                if (v > 0.5f)
+                {
+                    v = 1.4f;
+                    h = horizontalMovement;
+                }
+                else
+                {
+                    v = 1.2f;
+                    h = horizontalMovement;
+                }
+            }
+           
 
             anim.SetFloat(vertical, v, 0.1f, Time.deltaTime);
             anim.SetFloat(horizontal, h, 0.1f, Time.deltaTime);

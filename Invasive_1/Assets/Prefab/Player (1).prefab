@@ -109,9 +109,10 @@ GameObject:
   - component: {fileID: 6860581882431284304}
   - component: {fileID: 6860581882431284301}
   - component: {fileID: 6681893026000905469}
+  - component: {fileID: 897801361}
   m_Layer: 10
   m_Name: Player (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +182,9 @@ MonoBehaviour:
   mouseX: 0
   mouseY: 0
   b_Input: 0
-  dashFlag: 0
+  crouchFlag: 0
+  crouchHoldFlag: 0
+  crouchInputTimer: 0
   isInteracting: 0
 --- !u!114 &6860581882431284304
 MonoBehaviour:
@@ -199,10 +202,10 @@ MonoBehaviour:
   animatorHandler: {fileID: 0}
   rigidbody: {fileID: 0}
   normalCamera: {fileID: 0}
-  movementSpeed: 3
-  WalkingSpeed: 5
-  SprintSpeed: 10
+  movementSpeed: 4
+  crouchSpeed: 1.5
   rotationSpeed: 8
+  isCrouching: 0
 --- !u!114 &6860581882431284301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oxygen: 70
+  savedOxygen: 0
   oxygenBar: {fileID: 0}
   isAlive: 0
   killed: 0
@@ -319,6 +323,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &897801361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860581882431284311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf213cda9f0d2e4d9ee24245d8f681a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6860581883938846350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,6 +430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  vertical: 0
+  horizontal: 0
   canRotate: 1
 --- !u!4 &6394855983094092133 stripped
 Transform:

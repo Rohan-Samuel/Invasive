@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace RNS
@@ -24,9 +22,11 @@ namespace RNS
         [SerializeField]
        // float WalkingSpeed = 5;
       //  [SerializeField]
-       // float SprintSpeed = 10;
-      //  [SerializeField]
+        float crouchSpeed = 1;
+          [SerializeField]
         float rotationSpeed = 10;
+
+        public bool isCrouching;
 
         void Start()
         {
@@ -42,9 +42,10 @@ namespace RNS
         {
             float delta = Time.deltaTime;
 
+            isCrouching = inputHandler.b_Input;
             inputHandler.TickInput(delta);
             HandleMovement(delta);
-            HandleDashingAndCrouching(delta);
+            HandleSprintingAndCrouching(delta);
            
             
                 
@@ -78,18 +79,31 @@ namespace RNS
 
         public void HandleMovement(float delta)
         {
+            
+
             moveDirection = cameraObject.forward * inputHandler.vertical;
             moveDirection += cameraObject.right * inputHandler.horizontal;
             moveDirection.Normalize();
             moveDirection.y = 0;
 
             float speed = movementSpeed;
-            moveDirection *= speed;
+
+            if(inputHandler.crouchHoldFlag)
+            {
+                speed = crouchSpeed;
+                isCrouching = true;
+                moveDirection *= speed;
+            }
+            else
+            {
+                moveDirection *= speed;
+
+            }
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = projectedVelocity;
 
-            animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0);
+            animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, isCrouching);
 
             if (animatorHandler.canRotate)
             {
@@ -97,19 +111,19 @@ namespace RNS
             }
         }
 
-        public void HandleDashingAndCrouching(float delta)
+        public void HandleSprintingAndCrouching(float delta)
         {
             if (animatorHandler.anim.GetBool("isInteracting"))
                 return;
 
-            if (inputHandler.dashFlag)
+            if (inputHandler.crouchFlag)
             {
                 moveDirection = cameraObject.forward * inputHandler.vertical;
                 moveDirection += cameraObject.right * inputHandler.horizontal;
 
                 if (inputHandler.moveAmount > 0)
                 {
-                    animatorHandler.PlayTargetAnimation("Dashing", true);
+                    animatorHandler.PlayTargetAnimation("CrouchWalk", true);
                     moveDirection.y = 0;
                     Quaternion dashRotation = Quaternion.LookRotation(moveDirection);
                     myTransform.rotation = dashRotation;

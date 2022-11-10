@@ -142,7 +142,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""8ac54d16-2109-4c2f-a726-aaab353f9454"",
             ""actions"": [
                 {
-                    ""name"": ""Dash"",
+                    ""name"": ""Crouch"",
                     ""type"": ""Button"",
                     ""id"": ""2172ce63-9f94-458c-8de8-c1483c631264"",
                     ""expectedControlType"": ""Button"",
@@ -159,7 +159,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dash"",
+                    ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -170,7 +170,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dash"",
+                    ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -185,7 +185,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerMovement_Camera = m_PlayerMovement.FindAction("Camera", throwIfNotFound: true);
         // Player Actions
         m_PlayerActions = asset.FindActionMap("Player Actions", throwIfNotFound: true);
-        m_PlayerActions_Dash = m_PlayerActions.FindAction("Dash", throwIfNotFound: true);
+        m_PlayerActions_Crouch = m_PlayerActions.FindAction("Crouch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -286,12 +286,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // Player Actions
     private readonly InputActionMap m_PlayerActions;
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
-    private readonly InputAction m_PlayerActions_Dash;
+    private readonly InputAction m_PlayerActions_Crouch;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Dash => m_Wrapper.m_PlayerActions_Dash;
+        public InputAction @Crouch => m_Wrapper.m_PlayerActions_Crouch;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -301,16 +301,16 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsActionsCallbackInterface != null)
             {
-                @Dash.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnDash;
-                @Dash.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnDash;
-                @Dash.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnDash;
+                @Crouch.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCrouch;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Dash.started += instance.OnDash;
-                @Dash.performed += instance.OnDash;
-                @Dash.canceled += instance.OnDash;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
             }
         }
     }
@@ -322,6 +322,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public interface IPlayerActionsActions
     {
-        void OnDash(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
     }
 }
