@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class VisionSeeing : MonoBehaviour
 {   
-    readonly int HEARING = 1;
-    readonly int SEEING = 2;
-
-    public int sense;
     public int level;
     
     public GameObject enemy;
