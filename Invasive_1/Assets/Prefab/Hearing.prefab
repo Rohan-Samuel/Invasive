@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1018773706796459928}
   - component: {fileID: 2263554754265628755}
   - component: {fileID: 6470151529468423011}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VeryFar
   m_TagString: Hearing
   m_Icon: {fileID: 0}
@@ -110,7 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935582429bb301249be4add9db693b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sense: 0
   level: 4
   enemy: {fileID: 0}
 --- !u!1 &5511278203204982171
@@ -126,7 +125,7 @@ GameObject:
   - component: {fileID: 362905719156301858}
   - component: {fileID: 4706165123455282878}
   - component: {fileID: 2273625303940700234}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Far
   m_TagString: Hearing
   m_Icon: {fileID: 0}
@@ -223,7 +222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935582429bb301249be4add9db693b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sense: 0
   level: 3
   enemy: {fileID: 0}
 --- !u!1 &5569442519301538043
@@ -239,7 +237,7 @@ GameObject:
   - component: {fileID: 7672088973747605204}
   - component: {fileID: 8679853546592805964}
   - component: {fileID: 4368818191473204689}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hearing
   m_TagString: Hearing
   m_Icon: {fileID: 0}
@@ -336,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935582429bb301249be4add9db693b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sense: 0
   level: 1
   enemy: {fileID: 0}
 --- !u!1 &5709865223883317551
@@ -352,7 +349,7 @@ GameObject:
   - component: {fileID: 2603360922332870133}
   - component: {fileID: 8733898162392002067}
   - component: {fileID: 1332316660938187727}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Med
   m_TagString: Hearing
   m_Icon: {fileID: 0}
@@ -449,7 +446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935582429bb301249be4add9db693b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sense: 0
   level: 2
   enemy: {fileID: 0}
 --- !u!1 &7159596953176557469

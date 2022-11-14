@@ -8,7 +8,9 @@ public class FollowScript : MonoBehaviour
     public Transform target;
     public int speed;
     private int focuslevel;
-    private int huntTime;
+    public int huntTime;
+    public Transform[] waypoints;
+    private int currentWaypointIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,18 @@ public class FollowScript : MonoBehaviour
             transform.LookAt(doNotTurn);
         }
         else{
+          /*  Transform wp = waypoints[currentWaypointIndex];
+                if (Vector3.Distance(transform.position, wp.position)< 0.01f)
+                {
+                    currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+                }
+
+                else
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, wp.position, speed/2 * Time.deltaTime);
+                    transform.LookAt(wp.position);
+                }
+                */
             focuslevel = 0;
         }
     }
@@ -36,5 +50,9 @@ public class FollowScript : MonoBehaviour
             target = t;
             huntTime = (intensity * 200);
         }
+    }
+
+    public int getHuntTime(){
+        return huntTime;
     }
 }

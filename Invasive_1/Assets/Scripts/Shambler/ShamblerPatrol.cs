@@ -11,17 +11,19 @@ namespace RNS
         private float speed = 1f;
 
         private void Update()
-        {
-            Transform wp = waypoints[currentWaypointIndex];
-            if (Vector3.Distance(transform.position, wp.position)< 0.01f)
-            {
-                currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
-            }
+        {   
+            if(gameObject.GetComponent<FollowScript>().huntTime < 0){
+                Transform wp = waypoints[currentWaypointIndex];
+                if (Vector3.Distance(transform.position, wp.position)< 0.01f)
+                {
+                    currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+                }
 
-            else
-            {
-                transform.position = Vector3.MoveTowards(transform.position, wp.position, speed/2 * Time.deltaTime);
-                transform.LookAt(wp.position);
+                else
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, wp.position, speed/2 * Time.deltaTime);
+                    transform.LookAt(wp.position);
+                }
             }
         }
     }

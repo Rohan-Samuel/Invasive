@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2790268686007626149}
   - component: {fileID: 2790268686007626150}
   - component: {fileID: 2790268686007626151}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Oxygeb
-  m_TagString: Untagged
+  m_TagString: Oxygen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

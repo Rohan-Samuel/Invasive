@@ -108,10 +108,13 @@ namespace RNS
             {
                 Debug.Log("Got Battery");
             }
+            else if (collision.gameObject.tag == "Beaker"){
+                bottles++;
+            }
         }
 
         private void OnTriggerExit(Collider collision){
-            if(collision.gameObject.layer.Equals(6))
+            if(collision.tag == "Oxygen")
             {
                 isGainingO2 = false;
             }
@@ -119,13 +122,13 @@ namespace RNS
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.layer.Equals(6))
+            if (other.tag == "Oxygen")
             {
                 isGainingO2 = true;
 
             }
                         
-            else if(other.gameObject.layer.Equals(12))
+            else if(other.tag == "Respawn")
             {
                 respawnLocation = gameObject.transform.position;
                 savedOxygen = oxygen;
