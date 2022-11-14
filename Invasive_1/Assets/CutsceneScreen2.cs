@@ -17,7 +17,7 @@ public class CutsceneScreen2 : MonoBehaviour
     
             if (Input.GetMouseButton(0))
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(4);
                 
             }
    
