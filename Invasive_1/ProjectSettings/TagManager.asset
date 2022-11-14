@@ -8,6 +8,8 @@ TagManager:
   - Hearing
   - Terrain
   - Note
+  - Oxygen
+  - Beaker
   layers:
   - Default
   - TransparentFX

@@ -20,7 +20,7 @@ public class pickup : MonoBehaviour
 
     private void OnCollisionEnter(Collision other){
         
-        if (other.gameObject.layer.Equals(10))
+        if (other.gameObject.tag == "Player")
             {
                 Destroy(gameObject);
             }
