@@ -24,12 +24,14 @@ public class StealthHandler : MonoBehaviour
         {
             if(sound >= other.gameObject.GetComponent<VisionSeeing>().getLevel()){
                 Debug.Log("I can hear you" + other.gameObject.GetComponent<VisionSeeing>().getLevel());
+                other.gameObject.GetComponent<VisionSeeing>().seekOut(gameObject.transform, sound);
             }
         }
         else if (other.tag == ("Seeing"))
         {
             if(sight >= other.gameObject.GetComponent<VisionSeeing>().getLevel()){
                 Debug.Log("I can see you" + other.gameObject.GetComponent<VisionSeeing>().getLevel());
+                other.gameObject.GetComponent<VisionSeeing>().seekOut(gameObject.transform, sight);
             }
         }
     }

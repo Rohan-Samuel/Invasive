@@ -23,6 +23,10 @@ public class VisionSeeing : MonoBehaviour
         return level;
     }
 
+    public void seekOut(Transform playerLoc, int intensity){
+        enemy.GetComponent<FollowScript>().setTarget(playerLoc, intensity);
+    }
+
 
 
     
