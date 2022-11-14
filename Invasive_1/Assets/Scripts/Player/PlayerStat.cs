@@ -21,6 +21,14 @@ namespace RNS
         public AudioSource audioSource;
         public bool isGainingO2 = false;
         public AudioClip audioLog0;
+
+        public Transform cam;
+        public Transform throwPoint;
+        public GameObject objectToThrow;
+
+        public int bottles = 3;
+        public float throwForce;
+        public float throwUpwardForce;
         // Start is called before the first frame update
         void Start()
         {
@@ -56,6 +64,30 @@ namespace RNS
             if (isAlive == false || killed == true)
             {
                 OnDeath();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Mouse0) && bottles >= 1){
+                GameObject projectile = Instantiate(objectToThrow, throwPoint.position, cam.rotation);
+
+                // get rigidbody component
+                Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+
+                // calculate direction
+                Vector3 forceDirection = cam.transform.forward;
+
+                RaycastHit hit;
+
+                if(Physics.Raycast(cam.position, cam.forward, out hit, 500f))
+                {
+                    forceDirection = (hit.point - throwPoint.position).normalized;
+                }
+
+                // add force
+                Vector3 forceToAdd = forceDirection * throwForce + transform.up * throwUpwardForce;
+
+                projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
+
+                bottles--;
             }
         }
 

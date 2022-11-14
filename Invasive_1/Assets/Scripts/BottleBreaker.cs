@@ -17,7 +17,7 @@ public class BottleBreaker : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision){
+    private void OnCollisionStay(Collision collision){
         Transform area = transform;
         if (collision.gameObject.tag == "Terrain"){
             Instantiate(broken, area.position, Quaternion.identity);
