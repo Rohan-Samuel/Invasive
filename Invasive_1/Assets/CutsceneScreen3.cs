@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CutsceneScreen2 : MonoBehaviour
+public class CutsceneScreen3 : MonoBehaviour
 {
 
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class CutsceneScreen2 : MonoBehaviour
     
             if (Input.GetMouseButton(0))
             {
-                SceneManager.LoadScene(6);
+                SceneManager.LoadScene(7);
                 
             }
    
