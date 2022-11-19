@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace RNS
 {
@@ -9,24 +10,30 @@ namespace RNS
     {
         public const int MAX_OXYGEN = 100;
         public const int MIN_OXYGEN = 40;
-        public const double OXYGEN_REGEN = .2;
+        public const float OXYGEN_REGEN = .2f;
         public float oxygen = 70;
         public float savedOxygen = 0;
-        public Slider oxygenBar;
+        public bool isGainingO2 = false;
+        public int oxygenReading;
+
+        public TextMeshProUGUI oxygenText;
+
         public bool isAlive;
         public bool killed;
-        public int audioLogs = 0;
+
         Vector3 respawnLocation;
         Vector3 originalPos;
-        public AudioSource audioSource;
-        public bool isGainingO2 = false;
+
+        public int audioLogs = 0;
+        public AudioSource audioSource; 
         public AudioClip audioLog0;
+
         // Start is called before the first frame update
         void Start()
         {
             originalPos = gameObject.transform.position;
-            oxygenBar.value = oxygen;
-            Debug.Log(oxygen);
+            oxygenReading = (int)oxygen;
+            oxygenText.text = oxygen.ToString();
             audioSource = GetComponent<AudioSource>();
         }
 
@@ -34,18 +41,20 @@ namespace RNS
         void Update()
         {
             if (isGainingO2){
-                oxygen= oxygen + (float)OXYGEN_REGEN;
+                oxygen= oxygen + OXYGEN_REGEN;
                 if(oxygen > MAX_OXYGEN){
                     oxygen = MAX_OXYGEN;
                 }
             }
+            oxygenReading = (int)oxygen;
+            oxygenText.text = oxygenReading.ToString();
 
             if (oxygen > 0)
             {
                 oxygen -= Time.deltaTime*1;
                 isAlive = true;
             }
-            oxygenBar.value = oxygen;
+            
 
             if (oxygen <=0)
             {
