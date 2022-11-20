@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 6681893026000905469}
   - component: {fileID: 897801361}
   m_Layer: 10
-  m_Name: Player (1)
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,12 +220,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oxygen: 70
   savedOxygen: 0
-  oxygenBar: {fileID: 0}
+  isGainingO2: 0
+  oxygenReading: 0
+  oxygenText: {fileID: 0}
   isAlive: 0
   killed: 0
   audioLogs: 0
   audioSource: {fileID: 6681893026000905469}
-  isGainingO2: 0
   audioLog0: {fileID: 8300000, guid: 173dfc9955a211e41930d49d228838d2, type: 3}
 --- !u!82 &6681893026000905469
 AudioSource:
