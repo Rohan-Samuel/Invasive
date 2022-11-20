@@ -1,0 +1,103 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using FSM;
+
+public class VenusAI : MonoBehaviour
+{
+    public float rotationSpeed = 2f;
+
+    private StateMachine fsm;
+    public float hearingRange = 14f;
+    public float attackRange = 7f;
+
+    public Animator animator;
+
+    public Transform target;
+
+    public float turnSpeed = 2f;
+
+
+    float DistanceToPlayer()
+    {
+        Vector3 player = target.position;
+        return Vector2.Distance(transform.position, player);
+    }
+
+    void RotateTowardsPlayer()
+    {
+        animator.SetTrigger("BackToIdle");
+
+        Vector3 direction = transform.position - target.position  ;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), turnSpeed * Time.deltaTime);
+
+    }
+
+    void AttackPlayer()
+    {
+        animator.SetTrigger("OnAttackRange");
+    }
+
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        fsm = new StateMachine(this);
+
+        fsm.AddState("Listen", new State());
+
+        fsm.AddState("LookAtPlayer", new State(
+            onLogic: (state) => RotateTowardsPlayer()));
+
+        fsm.AddState("AttackPlayer", new State(
+            onLogic: (state) => AttackPlayer()));
+
+        fsm.SetStartState("LookAtPlayer");
+
+
+
+        fsm.AddTransition(new Transition(
+            "Listen",
+            "LookAtPlayer",
+            (transition) => DistanceToPlayer() < hearingRange
+            ));
+
+        fsm.AddTransition(new Transition(
+           "LookAtPlayer",
+           "Listen",
+           (transition) => DistanceToPlayer() > hearingRange
+           ));
+
+        fsm.AddTransition(new Transition(
+           "LookAtPlayer",
+           "AttackPlayer",
+           (transition) => DistanceToPlayer() < attackRange
+           ));
+
+        fsm.AddTransition(new Transition(
+           "AttackPlayer",
+           "LookAtPlayer",
+           (transition) => !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")
+           ));
+
+        fsm.Init();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (GetComponent<Boss>().health > 0)
+        {
+            
+            fsm.OnLogic();
+        }
+        else
+        {
+            animator.ResetTrigger("OnAttackRange");
+            animator.ResetTrigger("BackToIdle");
+        }
+
+    }
+}
+

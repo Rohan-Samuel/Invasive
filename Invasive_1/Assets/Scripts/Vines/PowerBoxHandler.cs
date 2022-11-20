@@ -19,11 +19,10 @@ public class PowerBoxHandler : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer.Equals(13))
+        if (collision.gameObject.tag == "Power")
         {
 
-            Destroy(vines.gameObject);
-            
+            vines.GetComponent<Boss>().health--;
         }
     }
 }

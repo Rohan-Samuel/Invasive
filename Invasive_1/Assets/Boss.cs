@@ -4,20 +4,30 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+
+    public int health = 3;
+
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    void onCollisionEnter(Collider c) {
-        if (c.tag == "Power") {
-            Destroy(gameObject);
+        if (health == 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("Death")) 
+        {
+            OnDeath();
+            
         }
+    }
+    
+
+    void OnDeath()
+    {
+        animator.SetTrigger("OnDeath");
+        gameObject.layer = 6;
     }
 }
