@@ -12,6 +12,7 @@ namespace RNS
         public const int MIN_OXYGEN = 40;
         public const float OXYGEN_REGEN = .2f;
         public float oxygen = 70;
+        public Slider oxygenBar;
         public float savedOxygen = 0;
         public bool isGainingO2 = false;
         public int oxygenReading;
@@ -32,6 +33,7 @@ namespace RNS
         void Start()
         {
             originalPos = gameObject.transform.position;
+            oxygenBar.value = oxygen;
             oxygenReading = (int)oxygen;
             oxygenText.text = oxygen.ToString();
             audioSource = GetComponent<AudioSource>();
@@ -46,6 +48,8 @@ namespace RNS
                     oxygen = MAX_OXYGEN;
                 }
             }
+
+            oxygenBar.value = oxygen;
             oxygenReading = (int)oxygen;
             oxygenText.text = oxygenReading.ToString();
 

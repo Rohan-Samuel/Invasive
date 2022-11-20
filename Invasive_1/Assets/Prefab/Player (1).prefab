@@ -220,20 +220,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oxygen: 70
-  savedOxygen: 0
   oxygenBar: {fileID: 0}
+  savedOxygen: 0
+  isGainingO2: 0
+  oxygenReading: 0
+  oxygenText: {fileID: 0}
   isAlive: 0
   killed: 0
   audioLogs: 0
   audioSource: {fileID: 6681893026000905469}
-  isGainingO2: 0
   audioLog0: {fileID: 8300000, guid: 173dfc9955a211e41930d49d228838d2, type: 3}
-  cam: {fileID: 0}
-  throwPoint: {fileID: 0}
-  objectToThrow: {fileID: 0}
-  bottles: 3
-  throwForce: 0
-  throwUpwardForce: 0
 --- !u!82 &6681893026000905469
 AudioSource:
   m_ObjectHideFlags: 0
@@ -516,7 +512,7 @@ Animator:
   m_GameObject: {fileID: 7589327331186777875}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cd7fc18d97fc26a439d93e716c4e4889, type: 2}
+  m_Controller: {fileID: 9100000, guid: c4d1d69a8487a3048ac8e8564c760918, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
