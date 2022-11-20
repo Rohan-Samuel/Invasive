@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace RNS
 {
@@ -9,32 +10,30 @@ namespace RNS
     {
         public const int MAX_OXYGEN = 100;
         public const int MIN_OXYGEN = 40;
-        public const double OXYGEN_REGEN = .2;
+        public const float OXYGEN_REGEN = .2f;
         public float oxygen = 70;
         public float savedOxygen = 0;
-        public Slider oxygenBar;
+        public bool isGainingO2 = false;
+        public int oxygenReading;
+
+        public TextMeshProUGUI oxygenText;
+
         public bool isAlive;
         public bool killed;
-        public int audioLogs = 0;
+
         Vector3 respawnLocation;
         Vector3 originalPos;
-        public AudioSource audioSource;
-        public bool isGainingO2 = false;
+
+        public int audioLogs = 0;
+        public AudioSource audioSource; 
         public AudioClip audioLog0;
 
-        public Transform cam;
-        public Transform throwPoint;
-        public GameObject objectToThrow;
-
-        public int bottles = 3;
-        public float throwForce;
-        public float throwUpwardForce;
         // Start is called before the first frame update
         void Start()
         {
             originalPos = gameObject.transform.position;
-            oxygenBar.value = oxygen;
-            Debug.Log(oxygen);
+            oxygenReading = (int)oxygen;
+            oxygenText.text = oxygen.ToString();
             audioSource = GetComponent<AudioSource>();
         }
 
@@ -42,18 +41,20 @@ namespace RNS
         void Update()
         {
             if (isGainingO2){
-                oxygen= oxygen + (float)OXYGEN_REGEN;
+                oxygen= oxygen + OXYGEN_REGEN;
                 if(oxygen > MAX_OXYGEN){
                     oxygen = MAX_OXYGEN;
                 }
             }
+            oxygenReading = (int)oxygen;
+            oxygenText.text = oxygenReading.ToString();
 
             if (oxygen > 0)
             {
                 oxygen -= Time.deltaTime*1;
                 isAlive = true;
             }
-            oxygenBar.value = oxygen;
+            
 
             if (oxygen <=0)
             {
@@ -64,30 +65,6 @@ namespace RNS
             if (isAlive == false || killed == true)
             {
                 OnDeath();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Mouse0) && bottles >= 1){
-                GameObject projectile = Instantiate(objectToThrow, throwPoint.position, cam.rotation);
-
-                // get rigidbody component
-                Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
-
-                // calculate direction
-                Vector3 forceDirection = cam.transform.forward;
-
-                RaycastHit hit;
-
-                if(Physics.Raycast(cam.position, cam.forward, out hit, 500f))
-                {
-                    forceDirection = (hit.point - throwPoint.position).normalized;
-                }
-
-                // add force
-                Vector3 forceToAdd = forceDirection * throwForce + transform.up * throwUpwardForce;
-
-                projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
-
-                bottles--;
             }
         }
 
@@ -108,13 +85,10 @@ namespace RNS
             {
                 Debug.Log("Got Battery");
             }
-            else if (collision.gameObject.tag == "Beaker"){
-                bottles++;
-            }
         }
 
         private void OnTriggerExit(Collider collision){
-            if(collision.tag == "Oxygen")
+            if(collision.gameObject.layer.Equals(6))
             {
                 isGainingO2 = false;
             }
@@ -122,13 +96,13 @@ namespace RNS
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Oxygen")
+            if (other.gameObject.layer.Equals(6))
             {
                 isGainingO2 = true;
 
             }
                         
-            else if(other.tag == "Respawn")
+            else if(other.gameObject.layer.Equals(12))
             {
                 respawnLocation = gameObject.transform.position;
                 savedOxygen = oxygen;
