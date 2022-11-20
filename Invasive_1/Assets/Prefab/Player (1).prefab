@@ -220,7 +220,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oxygen: 70
+<<<<<<< Updated upstream
   oxygenBar: {fileID: 0}
+=======
+>>>>>>> Stashed changes
   savedOxygen: 0
   isGainingO2: 0
   oxygenReading: 0
@@ -512,7 +515,11 @@ Animator:
   m_GameObject: {fileID: 7589327331186777875}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
+<<<<<<< Updated upstream
   m_Controller: {fileID: 9100000, guid: c4d1d69a8487a3048ac8e8564c760918, type: 2}
+=======
+  m_Controller: {fileID: 9100000, guid: 51161cb5442689049961360e7063a9a1, type: 2}
+>>>>>>> Stashed changes
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

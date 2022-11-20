@@ -48,10 +48,15 @@ namespace RNS
                     oxygen = MAX_OXYGEN;
                 }
             }
+<<<<<<< Updated upstream
 
             oxygenBar.value = oxygen;
             oxygenReading = (int)oxygen;
             oxygenText.text = oxygenReading.ToString();
+=======
+           // oxygenReading = (int)oxygen;
+           // oxygenText.text = oxygenReading.ToString();
+>>>>>>> Stashed changes
 
             if (oxygen > 0)
             {
