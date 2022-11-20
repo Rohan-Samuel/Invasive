@@ -19,7 +19,7 @@ public class BottleBreaker : MonoBehaviour
 
     private void OnCollisionStay(Collision collision){
         Transform area = transform;
-        if (collision.gameObject.tag == "Terrain"){
+        if (collision.gameObject.layer.Equals(3)){
             Instantiate(broken, area.position, Quaternion.identity);
             Destroy(gameObject);
         }
