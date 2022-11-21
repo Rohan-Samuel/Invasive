@@ -21,7 +21,7 @@ public class HeldButtonBottle : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if((collision.gameObject.tag == "Throwable") ||  (collision.gameObject.tag == "LandedObject"))
+        if((collision.gameObject.tag == "Throwable") || (collision.gameObject.tag == "LandedObject"))
         {
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
