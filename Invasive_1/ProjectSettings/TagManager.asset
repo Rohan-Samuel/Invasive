@@ -11,6 +11,8 @@ TagManager:
   - Oxygen
   - Beaker
   - Power
+  - Throwable
+  - LandedObject
   layers:
   - Default
   - TransparentFX

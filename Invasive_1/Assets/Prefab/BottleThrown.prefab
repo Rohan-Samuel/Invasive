@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8316267302379613000}
   m_Layer: 0
   m_Name: BottleThrown
-  m_TagString: Untagged
+  m_TagString: Throwable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
