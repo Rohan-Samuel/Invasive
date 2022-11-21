@@ -89,6 +89,9 @@ namespace RNS
             {
                 Debug.Log("Got Battery");
             }
+            else if (collision.gameObject.tag == "Beaker"){
+                gameObject.GetComponent<ThrowingHandle>().getBottle();
+            }
         }
 
         private void OnTriggerExit(Collider collision){
