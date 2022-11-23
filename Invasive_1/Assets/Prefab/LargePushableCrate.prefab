@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7105769150044556164}
   m_Layer: 8
   m_Name: LargePushableCrate
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
