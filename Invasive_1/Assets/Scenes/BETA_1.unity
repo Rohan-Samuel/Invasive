@@ -11156,7 +11156,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574708259}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -28903,6 +28903,7 @@ Transform:
   - {fileID: 1485937310}
   - {fileID: 898033724}
   - {fileID: 707291420}
+  - {fileID: 320718325}
   - {fileID: 885612805}
   - {fileID: 503053483}
   - {fileID: 1258976941}
@@ -28912,21 +28913,20 @@ Transform:
   - {fileID: 1951007973}
   - {fileID: 2315980}
   - {fileID: 2096688848}
+  - {fileID: 360040751}
   - {fileID: 974413489}
   - {fileID: 1052304542}
-  - {fileID: 320718325}
   - {fileID: 265268818}
+  - {fileID: 388005961}
   - {fileID: 1705545218}
   - {fileID: 1015900148}
-  - {fileID: 900137406}
-  - {fileID: 121709418}
-  - {fileID: 360040751}
-  - {fileID: 388005961}
   - {fileID: 592158877}
+  - {fileID: 900137406}
   - {fileID: 1019494164}
+  - {fileID: 121709418}
+  - {fileID: 1583571078}
   - {fileID: 229549647}
   - {fileID: 128756743}
-  - {fileID: 1583571078}
   m_Father: {fileID: 0}
   m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
