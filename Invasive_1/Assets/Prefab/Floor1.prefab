@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4221185233788329829}
   - component: {fileID: -7988284752998927991}
   - component: {fileID: -9086291466809173339}
-  - component: {fileID: 8302295989744115649}
-  m_Layer: 0
+  - component: {fileID: 533023578948735186}
+  m_Layer: 3
   m_Name: Floor1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4221185233788329829
 Transform:
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8302295989744115649
-MeshCollider:
+--- !u!65 &533023578948735186
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2579773643916641826, guid: 1188c9a103fc9de449d184c6492742e8, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 155.86731, y: 8.775534, z: 69.65343}
+  m_Center: {x: 0, y: -0.63209796, z: 229.45282}
