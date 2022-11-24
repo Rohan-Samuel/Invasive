@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1505329049676100345, guid: 159804972a905ad4596d4c18fcf2dc60, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07f2cdcd8b885c24fb17066b8f9aa614, type: 2}
     - target: {fileID: 919132149155446097, guid: 159804972a905ad4596d4c18fcf2dc60, type: 3}
       propertyPath: m_Name
       value: broken beaker
