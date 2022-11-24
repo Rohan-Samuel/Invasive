@@ -19,7 +19,7 @@ public class HeldButtonBottle : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if((collision.gameObject.tag == "Throwable") || (collision.gameObject.tag == "LandedObject"))
         {
@@ -28,7 +28,7 @@ public class HeldButtonBottle : MonoBehaviour
             button.gameObject.transform.position += new Vector3(0,-1,0);
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
         if((collision.gameObject.tag == "Throwable") ||  (collision.gameObject.tag == "LandedObject"))
         {

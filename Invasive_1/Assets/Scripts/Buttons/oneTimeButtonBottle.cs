@@ -19,7 +19,7 @@ public class oneTimeButtonBottle : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
         if(( (collision.gameObject.tag == "Throwable") ||  (collision.gameObject.tag == "LandedObject")) && (activated == false))
         {
