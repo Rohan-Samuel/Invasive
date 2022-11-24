@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2818374003827803769}
   m_Layer: 10
   m_Name: Broken Bottle
-  m_TagString: Untagged
+  m_TagString: LandedObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

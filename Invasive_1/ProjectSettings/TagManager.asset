@@ -12,6 +12,8 @@ TagManager:
   - Beaker
   - Power
   - Crate
+  - Throwable
+  - LandedObject
   layers:
   - Default
   - TransparentFX

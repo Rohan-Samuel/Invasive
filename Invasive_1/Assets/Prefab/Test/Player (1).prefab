@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 1278582182031564199}
   - component: {fileID: 1278582182031564216}
   - component: {fileID: 1278582182031564217}
+  - component: {fileID: 5986748521480627771}
   - component: {fileID: 1278582182031564218}
   - component: {fileID: 1278582182031564219}
   - component: {fileID: 1278582182031564198}
@@ -155,6 +156,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5986748521480627771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278582182031564220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b4b9128ee15b64185b0ddabfc3f296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  throwPoint: {fileID: 0}
+  objectToThrow: {fileID: 0}
+  bottles: 10
+  throwForce: 5
+  throwUpwardForce: 0
 --- !u!114 &1278582182031564218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,20 +229,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oxygen: 70
-  savedOxygen: 0
   oxygenBar: {fileID: 0}
+  savedOxygen: 0
+  isGainingO2: 0
+  oxygenReading: 0
+  oxygenText: {fileID: 0}
   isAlive: 0
   killed: 0
   audioLogs: 0
   audioSource: {fileID: 1310858833729363222}
-  isGainingO2: 0
   audioLog0: {fileID: 8300000, guid: 173dfc9955a211e41930d49d228838d2, type: 3}
-  cam: {fileID: 0}
-  throwPoint: {fileID: 7547940775443730721}
-  objectToThrow: {fileID: 8546147279839307102, guid: b70ba0800593d6e4ba7d27bdc43fa9ed, type: 3}
-  bottles: 3
-  throwForce: 20
-  throwUpwardForce: 0
 --- !u!82 &1310858833729363222
 AudioSource:
   m_ObjectHideFlags: 0
