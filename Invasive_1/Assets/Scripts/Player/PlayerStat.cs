@@ -103,13 +103,13 @@ namespace RNS
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.layer.Equals(6))
+            if (other.gameObject.tag == "Oxygen")
             {
                 isGainingO2 = true;
 
             }
                         
-            else if(other.gameObject.layer.Equals(12))
+            else if(other.gameObject.tag == "Respawn")
             {
                 respawnLocation = gameObject.transform.position;
                 savedOxygen = oxygen;
