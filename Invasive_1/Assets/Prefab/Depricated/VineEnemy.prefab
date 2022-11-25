@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9161643650778254367}
-  - component: {fileID: 8695900167435610096}
+  - component: {fileID: 5208158806745345850}
   m_Layer: 7
   m_Name: VineEnemy
   m_TagString: Untagged
@@ -117,8 +117,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &8695900167435610096
-CapsuleCollider:
+--- !u!64 &5208158806745345850
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -127,10 +127,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 3.93
-  m_Height: 20
-  m_Direction: 1
-  m_Center: {x: -0.21, y: 8.97, z: 3.2}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6099800089077584851, guid: 705944168d6ff42bd9421fba90842823, type: 3}
 --- !u!1001 &6478678821724175349
 PrefabInstance:
   m_ObjectHideFlags: 0
