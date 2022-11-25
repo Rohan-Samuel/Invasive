@@ -18125,7 +18125,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26704
+  m_Name: pb_Mesh153516
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -54219,6 +54219,14 @@ PrefabInstance:
       propertyPath: objectToThrow
       value: 
       objectReference: {fileID: 8546147279839307102, guid: b70ba0800593d6e4ba7d27bdc43fa9ed, type: 3}
+    - target: {fileID: 6860581882431284304, guid: 3801a85d245570a4087a03967158df29, type: 3}
+      propertyPath: crouchSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860581882431284304, guid: 3801a85d245570a4087a03967158df29, type: 3}
+      propertyPath: movementSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6860581882431284306, guid: 3801a85d245570a4087a03967158df29, type: 3}
       propertyPath: m_Mass
       value: 50

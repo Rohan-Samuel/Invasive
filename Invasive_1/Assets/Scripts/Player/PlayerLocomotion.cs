@@ -111,6 +111,7 @@ namespace RNS
             }
         }
 
+
         public void HandleSprintingAndCrouching(float delta)
         {
             if (animatorHandler.anim.GetBool("isInteracting"))
