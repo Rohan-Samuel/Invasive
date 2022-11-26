@@ -19,9 +19,10 @@ public class oneTimeButton : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
-        if((collision.gameObject.layer.Equals(7)) && (activated == false))
+        if(collision.gameObject.tag == "NearbyDude") Debug.Log("Detect Enemy");
+        if((collision.gameObject.tag == "NearbyDude") && (activated == false))
         {
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();

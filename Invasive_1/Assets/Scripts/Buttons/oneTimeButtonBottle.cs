@@ -21,7 +21,8 @@ public class oneTimeButtonBottle : MonoBehaviour
     }
     private void OnTriggerStay(Collider collision)
     {
-        if(( (collision.gameObject.tag == "Throwable") ||  (collision.gameObject.tag == "LandedObject")) && (activated == false))
+
+        if( (collision.gameObject.tag == "NearBottle")  && (activated == false))
         {
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();

@@ -21,7 +21,7 @@ public class HeldButtonBottle : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        if((collision.gameObject.tag == "Throwable") || (collision.gameObject.tag == "LandedObject"))
+        if((collision.gameObject.tag == "NearBottle"))
         {
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
@@ -30,7 +30,7 @@ public class HeldButtonBottle : MonoBehaviour
     }
     private void OnTriggerExit(Collider collision)
     {
-        if((collision.gameObject.tag == "Throwable") ||  (collision.gameObject.tag == "LandedObject"))
+        if((collision.gameObject.tag == "NearBottle"))
         {
             activated = false;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
