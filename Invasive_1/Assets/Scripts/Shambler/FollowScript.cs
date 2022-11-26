@@ -12,10 +12,13 @@ public class FollowScript : MonoBehaviour
     public Transform[] waypoints;
     private int currentWaypointIndex = 0;
     private int stunTimer = 0;
+    public int waitDuration;
+    private int pauseTime;
 
     // Start is called before the first frame update
     void Start()
     {
+        pauseTime = waitDuration;
         focuslevel = 0;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
@@ -32,18 +35,24 @@ public class FollowScript : MonoBehaviour
             transform.LookAt(doNotTurn);
         }
         else{
-          /*  Transform wp = waypoints[currentWaypointIndex];
-                if (Vector3.Distance(transform.position, wp.position)< 0.01f)
+            Transform wp = waypoints[currentWaypointIndex];
+                if (Vector3.Distance(transform.position, wp.position)< 0.1f)
                 {
-                    currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+                    pauseTime--;
+                    if(pauseTime == 0){
+                        pauseTime = waitDuration;
+                        currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+                    }
                 }
 
                 else
                 {
+                    agent.SetDestination(wp.position);
                     transform.position = Vector3.MoveTowards(transform.position, wp.position, speed/2 * Time.deltaTime);
-                    transform.LookAt(wp.position);
+                    Vector3 doNotTurn = new Vector3(wp.position.x, gameObject.transform.position.y, wp.position.z);
+                    transform.LookAt(doNotTurn);
                 }
-                */
+                
             focuslevel = 0;
         }
     }
@@ -51,6 +60,7 @@ public class FollowScript : MonoBehaviour
         if(intensity > focuslevel){
             target = t;
             huntTime = (intensity * 200);
+            focuslevel = intensity;
         }
     }
 
