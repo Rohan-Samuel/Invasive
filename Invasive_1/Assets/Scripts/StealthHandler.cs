@@ -35,5 +35,12 @@ public class StealthHandler : MonoBehaviour
             }
         }
     }
+
+    public void setSound(int i){
+        sound = i;
+    }
+    public void setSight(int i){
+        sight = i;
+    }
     
 }
