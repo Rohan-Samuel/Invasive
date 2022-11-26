@@ -94,8 +94,8 @@ namespace RNS
             }
         }
 
-        private void OnTriggerExit(Collider collision){
-            if(collision.gameObject.layer.Equals(6))
+        private void OnTriggerExit(Collider other){
+            if(other.gameObject.tag == "Oxygen")
             {
                 isGainingO2 = false;
             }
