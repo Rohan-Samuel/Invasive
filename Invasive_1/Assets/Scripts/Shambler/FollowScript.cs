@@ -11,6 +11,7 @@ public class FollowScript : MonoBehaviour
     public int huntTime;
     public Transform[] waypoints;
     private int currentWaypointIndex = 0;
+    private int stunTimer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,8 @@ public class FollowScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(target != null && huntTime > 0){
+        stunTimer--;
+        if(target != null && huntTime > 0 && stunTimer < 0){
 
             agent.SetDestination(target.position);
             agent.transform.position = Vector3.MoveTowards(transform.position, target.position, speed/2 * Time.deltaTime);
@@ -46,7 +48,7 @@ public class FollowScript : MonoBehaviour
         }
     }
     public void setTarget(Transform t, int intensity){
-        if(intensity >= focuslevel){
+        if(intensity > focuslevel){
             target = t;
             huntTime = (intensity * 200);
         }
@@ -54,5 +56,11 @@ public class FollowScript : MonoBehaviour
 
     public int getHuntTime(){
         return huntTime;
+    }
+    private void OnCollisionEnter(Collision collision){
+        if(collision.gameObject.tag == "Throwable"){
+            stunTimer = 120;
+            Debug.Log("oww");
+        }
     }
 }
