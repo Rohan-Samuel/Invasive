@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BottleBreaker : MonoBehaviour
+public class EnviormentalKill : MonoBehaviour
 {
-    public GameObject broken;
+    public GameObject Parent;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,9 @@ public class BottleBreaker : MonoBehaviour
     {
         
     }
-
-    private void OnCollisionEnter(Collision collision){
-        Transform area = transform;
-        Instantiate(broken, area.position, Quaternion.identity);
-        Destroy(gameObject);
+    private void OnCollisionEnter (Collision collision){
+        if (collision.gameObject.tag == "Crate"){
+            Destroy(Parent);
+        }
     }
 }

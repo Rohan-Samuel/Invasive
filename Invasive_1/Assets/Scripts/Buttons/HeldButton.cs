@@ -19,18 +19,18 @@ public class HeldButton : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.layer.Equals(7))
+        if(collision.gameObject.tag == "NearbyDude")
         {
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
             button.gameObject.transform.position += new Vector3(0,-1,0);
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
-        if(collision.gameObject.layer.Equals(7))
+        if(collision.gameObject.tag == "NearbyDude")
         {
             activated = false;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
