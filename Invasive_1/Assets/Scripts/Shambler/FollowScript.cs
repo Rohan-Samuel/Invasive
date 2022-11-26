@@ -27,14 +27,15 @@ public class FollowScript : MonoBehaviour
     void Update()
     {
         stunTimer--;
+        huntTime--;
         if(target != null && huntTime > 0 && stunTimer < 0){
-
+            
             agent.SetDestination(target.position);
             agent.transform.position = Vector3.MoveTowards(transform.position, target.position, speed/2 * Time.deltaTime);
             Vector3 doNotTurn = new Vector3(target.position.x, gameObject.transform.position.y, target.position.z);
             transform.LookAt(doNotTurn);
         }
-        else{
+        else if (stunTimer < 0){
             Transform wp = waypoints[currentWaypointIndex];
                 if (Vector3.Distance(transform.position, wp.position)< 0.1f)
                 {
@@ -57,7 +58,7 @@ public class FollowScript : MonoBehaviour
         }
     }
     public void setTarget(Transform t, int intensity){
-        if(intensity > focuslevel){
+        if(intensity >= focuslevel){
             target = t;
             huntTime = (intensity * 200);
             focuslevel = intensity;
