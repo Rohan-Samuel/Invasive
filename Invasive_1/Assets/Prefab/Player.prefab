@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 6860581882431284307}
   - component: {fileID: 6860581882431284306}
   - component: {fileID: 6860581882431284305}
+  - component: {fileID: 7761381483301516185}
   - component: {fileID: 6332813627798771261}
   - component: {fileID: 6860581882431284304}
   - component: {fileID: 6860581882431284301}
@@ -286,6 +287,19 @@ MonoBehaviour:
   crouchHoldFlag: 0
   crouchInputTimer: 0
   isInteracting: 0
+--- !u!114 &7761381483301516185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860581882431284311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba93479f1b0576541b98f13d4b6b0379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlight: {fileID: 0}
 --- !u!114 &6332813627798771261
 MonoBehaviour:
   m_ObjectHideFlags: 0
