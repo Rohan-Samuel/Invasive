@@ -9,13 +9,14 @@ public class VineKiller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        void OnCollisonEnter(Collider collision)
-        {
 
-            if (collision.gameObject.tag == "Crate")
-            {
-                Destroy(gameObject);
-            }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "Crate")
+        {
+            Destroy(gameObject);
         }
     }
 }
