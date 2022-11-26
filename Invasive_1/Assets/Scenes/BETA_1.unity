@@ -26840,7 +26840,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29492
+  m_Name: pb_Mesh35888
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -115584,6 +115584,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5871429533468070292, guid: 3801a85d245570a4087a03967158df29, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6332813627798771261, guid: 3801a85d245570a4087a03967158df29, type: 3}
       propertyPath: cam
       value: 
@@ -115594,7 +115598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6332813627798771261, guid: 3801a85d245570a4087a03967158df29, type: 3}
       propertyPath: throwForce
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6332813627798771261, guid: 3801a85d245570a4087a03967158df29, type: 3}
       propertyPath: throwPoint
@@ -331629,7 +331633,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27222
+  m_Name: pb_Mesh33540
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

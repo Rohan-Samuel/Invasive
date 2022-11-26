@@ -17,7 +17,7 @@ public class BottleBreaker : MonoBehaviour
         
     }
 
-    private void OnCollisionStay(Collision collision){
+    private void OnCollisionEnter(Collision collision){
         Transform area = transform;
         Instantiate(broken, area.position, Quaternion.identity);
         Destroy(gameObject);

@@ -316,7 +316,7 @@ MonoBehaviour:
   throwPoint: {fileID: 0}
   objectToThrow: {fileID: 8546147279839307102, guid: b70ba0800593d6e4ba7d27bdc43fa9ed, type: 3}
   bottles: 0
-  throwForce: 50
+  throwForce: 30
   throwUpwardForce: 5
 --- !u!114 &6860581882431284304
 MonoBehaviour:
