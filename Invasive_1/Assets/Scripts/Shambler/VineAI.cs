@@ -98,5 +98,16 @@ namespace RNS
 
             
         }
+
+    public void setTarget(Transform t, int intensity){
+        if(t == target){
+            huntTime = (intensity * 100);
+        }
+        else if (intensity > focuslevel){
+            target = t;
+            huntTime = (intensity * 100);
+            focuslevel = intensity;
+        }
+    }
     }
 }
