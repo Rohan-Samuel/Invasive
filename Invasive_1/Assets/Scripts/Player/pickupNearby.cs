@@ -25,6 +25,7 @@ public class pickupNearby : MonoBehaviour
                 nearbyBottles = 0;
             }
             if(audioLogID > 0){
+                //PUT AUDIOLOG CODE HERE
                 audioLogID = 0;
             }
         }
