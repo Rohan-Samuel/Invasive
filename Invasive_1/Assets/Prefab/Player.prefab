@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3691549995038530308}
   - component: {fileID: 7006289819337714810}
   - component: {fileID: 2915583228283830414}
+  - component: {fileID: 3470210096243976723}
   m_Layer: 11
-  m_Name: Cylinder
+  m_Name: NearbyZone
   m_TagString: NearPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +99,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &3470210096243976723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5129839688411261371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d80e6ee34aa5349b86da4bec2a0c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearbyBottles: 0
+  audioLogID: 0
+  mainPlayer: {fileID: 6860581882431284311}
 --- !u!1 &6681893027312609246
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +334,8 @@ MonoBehaviour:
   bottles: 0
   throwForce: 30
   throwUpwardForce: 5
+  throwingCharge: 0
+  aiming: {fileID: 0}
 --- !u!114 &6860581882431284304
 MonoBehaviour:
   m_ObjectHideFlags: 0
