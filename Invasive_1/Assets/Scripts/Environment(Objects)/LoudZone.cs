@@ -17,7 +17,7 @@ public class LoudZone : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision){
         if (collision.gameObject.tag == "Player"){
-            gameObject.GetComponent<StealthHandler>().setSound(2);
+            gameObject.GetComponent<StealthHandler>().setSound(3);
         }
     }
     private void OnCollisionExit(Collision collision){
