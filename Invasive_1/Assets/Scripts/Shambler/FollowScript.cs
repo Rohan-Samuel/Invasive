@@ -31,7 +31,7 @@ public class FollowScript : MonoBehaviour
         if(target != null && huntTime > 0 && stunTimer < 0){
             
             agent.SetDestination(target.position);
-            agent.transform.position = Vector3.MoveTowards(transform.position, target.position, speed/2 * Time.deltaTime);
+            agent.transform.position = Vector3.MoveTowards(transform.position, target.position, (focuslevel*speed)/6  * Time.deltaTime);
             Vector3 doNotTurn = new Vector3(target.position.x, gameObject.transform.position.y, target.position.z);
             transform.LookAt(doNotTurn);
         }
@@ -49,7 +49,7 @@ public class FollowScript : MonoBehaviour
                 else
                 {
                     agent.SetDestination(wp.position);
-                    transform.position = Vector3.MoveTowards(transform.position, wp.position, speed/2 * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, wp.position, (focuslevel*speed)/6 * Time.deltaTime);
                     Vector3 doNotTurn = new Vector3(wp.position.x, gameObject.transform.position.y, wp.position.z);
                     transform.LookAt(doNotTurn);
                 }
