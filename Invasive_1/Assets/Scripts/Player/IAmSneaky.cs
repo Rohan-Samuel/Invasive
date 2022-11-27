@@ -9,7 +9,7 @@ public class IAmSneaky : MonoBehaviour
 
     bool lightOn = true;
 
-    bool wDown = false, aDown = false, sDown = false, dDown = false, moving = false;
+    bool wDown = false, aDown = false, sDown = false, dDown = false, moving = false, crouching = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +23,14 @@ public class IAmSneaky : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftShift)){
             VISUAL_STEALTH--;
             AUDIO_STEALTH--;
+            crouching = true;
             gameObject.GetComponent<StealthHandler>().setSound(AUDIO_STEALTH);
             gameObject.GetComponent<StealthHandler>().setSight(VISUAL_STEALTH);
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift)){
             VISUAL_STEALTH++;
             AUDIO_STEALTH++;
+            crouching = false;
             gameObject.GetComponent<StealthHandler>().setSound(AUDIO_STEALTH);
             gameObject.GetComponent<StealthHandler>().setSight(VISUAL_STEALTH);
         }
