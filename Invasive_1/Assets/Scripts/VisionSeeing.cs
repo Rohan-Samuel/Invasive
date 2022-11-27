@@ -5,7 +5,7 @@ using UnityEngine;
 public class VisionSeeing : MonoBehaviour
 {   
     public int level;
-    
+
     public GameObject enemy;
     // Start is called before the first frame update
     void Start()
