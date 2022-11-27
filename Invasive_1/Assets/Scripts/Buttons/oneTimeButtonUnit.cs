@@ -8,9 +8,13 @@ public class oneTimeButtonUnit : MonoBehaviour
     public bool activated = false; 
     public GameObject lightBulb;
     public GameObject button;
+    public GameObject buttonSound;
+    public GameObject gateSound;
     // Start is called before the first frame update
     void Start()
     {
+        buttonSound.SetActive(false);
+        gateSound.SetActive(false);
         
     }
 
@@ -26,6 +30,12 @@ public class oneTimeButtonUnit : MonoBehaviour
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
             button.gameObject.transform.position += new Vector3(0,-1,0);
+            buttonSound.SetActive(true);
+            gateSound.SetActive(true);
+        }
+        else{
+            buttonSound.SetActive(false);
+            gateSound.SetActive(false);
         }
     }
 }
