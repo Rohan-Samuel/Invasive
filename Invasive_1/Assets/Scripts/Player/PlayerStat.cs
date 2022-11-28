@@ -25,9 +25,13 @@ namespace RNS
         Vector3 respawnLocation;
         Vector3 originalPos;
 
+        int savedBottles = 0;
+
         public int audioLogs = 0;
         public AudioSource audioSource; 
         public AudioClip audioLog0;
+
+        public int UIBottles, UICharge;
 
         // Start is called before the first frame update
         void Start()
@@ -71,6 +75,8 @@ namespace RNS
                 OnDeath();
             }
 
+            UIBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
+            UICharge = gameObject.GetComponent<ThrowingHandle>().getChargeCount();
 
 
             
@@ -117,6 +123,7 @@ namespace RNS
             {
                 respawnLocation = gameObject.transform.position;
                 savedOxygen = oxygen;
+                savedBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
             }
         }
 
@@ -125,7 +132,7 @@ namespace RNS
         {
             oxygen = savedOxygen;
             if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
-
+            gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
             gameObject.transform.position = respawnLocation;
             if (gameObject.transform.position == respawnLocation)
             {

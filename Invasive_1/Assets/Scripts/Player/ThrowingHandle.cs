@@ -70,4 +70,13 @@ public class ThrowingHandle : MonoBehaviour
     public void getBottle(){
         bottles++;
     }
+    public void setBottle(int i){
+        bottles = i;
+    }
+    public int getBottleCount(){
+        return bottles;
+    }
+    public int getChargeCount(){
+        return throwingCharge;
+    }
 }
