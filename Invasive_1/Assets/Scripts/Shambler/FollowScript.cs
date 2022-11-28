@@ -56,6 +56,9 @@ public class FollowScript : MonoBehaviour
                 
             focuslevel = 0;
         }
+        else {
+            agent.transform.position = Vector3.MoveTowards(transform.position, transform.position, 0);
+        }
     }
     public void setTarget(Transform t, int intensity){
         if(t == target){
