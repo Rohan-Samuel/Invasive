@@ -19,6 +19,8 @@ public class AudioLogDisplay : MonoBehaviour
     }
     public void modifyDisplay(int i){
 
+        
+
         audioLog1.GetComponent<Image>().enabled = false;
         audioLog2.GetComponent<Image>().enabled = false;
         audioLog3.GetComponent<Image>().enabled = false;
