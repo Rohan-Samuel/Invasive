@@ -30,6 +30,8 @@ namespace RNS
         float crouchHeight = 1;
         float standHeight = 2;
 
+        public bool upStairs = false;
+
 
         public bool isCrouching;
 
@@ -118,8 +120,13 @@ namespace RNS
             }
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
-            projectedVelocity = new Vector3(projectedVelocity.x, -2, projectedVelocity.z);
+
+            if(upStairs)projectedVelocity = new Vector3(projectedVelocity.x, 2, projectedVelocity.z);
+            else projectedVelocity = new Vector3(projectedVelocity.x, -2, projectedVelocity.z);
+            
+
             rigidbody.velocity = projectedVelocity;
+
 
             
 
@@ -156,6 +163,10 @@ namespace RNS
                 }
             }
         }
+        public void setStairs(bool stairing){
+            upStairs = stairing;
+        }
+
            #endregion
 
         
