@@ -110,7 +110,10 @@ namespace RNS
             }
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
+            projectedVelocity = new Vector3(projectedVelocity.x, -2, projectedVelocity.z);
             rigidbody.velocity = projectedVelocity;
+
+            
 
             animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, isCrouching);
 

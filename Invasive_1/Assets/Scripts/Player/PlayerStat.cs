@@ -13,11 +13,13 @@ namespace RNS
         public const float OXYGEN_REGEN = .2f;
         public float oxygen = 70;
         public Slider oxygenBar;
+        public Slider chargeBar;
         public float savedOxygen = 0;
         public bool isGainingO2 = false;
         public int oxygenReading;
 
         public TextMeshProUGUI oxygenText;
+        public TextMeshProUGUI bottleText;
 
         public bool isAlive;
         public bool killed;
@@ -25,9 +27,13 @@ namespace RNS
         Vector3 respawnLocation;
         Vector3 originalPos;
 
+        int savedBottles = 0;
+
         public int audioLogs = 0;
         public AudioSource audioSource; 
         public AudioClip audioLog0;
+
+        public int UIBottles, UICharge;
 
         // Start is called before the first frame update
         void Start()
@@ -71,8 +77,11 @@ namespace RNS
                 OnDeath();
             }
 
+            UIBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
+            UICharge = gameObject.GetComponent<ThrowingHandle>().getChargeCount();
 
-
+            chargeBar.value = UICharge;
+            bottleText.text = UIBottles.ToString();
             
         }
 
@@ -87,7 +96,7 @@ namespace RNS
             else if (collision.gameObject.layer.Equals(11))
             {
                 Debug.Log("Got Audio Log");
-                audioSource.PlayOneShot(audioLog0, 0.5f);
+                //audioSource.PlayOneShot(audioLog0, 0.5f);
             }
             else if (collision.gameObject.layer.Equals(6))
             {
@@ -117,6 +126,7 @@ namespace RNS
             {
                 respawnLocation = gameObject.transform.position;
                 savedOxygen = oxygen;
+                savedBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
             }
         }
 
@@ -125,7 +135,7 @@ namespace RNS
         {
             oxygen = savedOxygen;
             if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
-
+            gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
             gameObject.transform.position = respawnLocation;
             if (gameObject.transform.position == respawnLocation)
             {

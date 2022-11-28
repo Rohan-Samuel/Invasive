@@ -27,6 +27,10 @@ public class StealthHandler : MonoBehaviour
                 other.gameObject.GetComponent<VisionSeeing>().seekOut(gameObject.transform, sound);
             }
         }
+        else if (other.tag == ("NearbyVine"))
+        {
+                other.gameObject.GetComponent<VineHear>().setSound(gameObject.transform, sound);
+        }
         else if (other.tag == ("Seeing"))
         {
             if(sight >= other.gameObject.GetComponent<VisionSeeing>().getLevel()){

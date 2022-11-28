@@ -8,6 +8,7 @@ public class pickupNearby : MonoBehaviour
     public int audioLogID = 0;
     public GameObject mainPlayer;
 
+    public GameObject audioLogUIBlock;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class pickupNearby : MonoBehaviour
                 nearbyBottles = 0;
             }
             if(audioLogID > 0){
-                //PUT AUDIOLOG CODE HERE
+                audioLogUIBlock.GetComponent<AudioLogDisplay>().modifyDisplay(audioLogID);
                 audioLogID = 0;
             }
         }
