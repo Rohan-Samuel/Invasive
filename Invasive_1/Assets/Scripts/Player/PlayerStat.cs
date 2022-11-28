@@ -151,9 +151,7 @@ namespace RNS
             }
             else if(other.gameObject.tag == "Respawn")
             {
-                respawnLocation = gameObject.transform.position;
-                savedOxygen = oxygen;
-                savedBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
+
                 saveText.text = "";
             }
         }
@@ -172,6 +170,7 @@ namespace RNS
                 respawnLocation = gameObject.transform.position;
                 savedOxygen = oxygen;
                 savedBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
+                if(savedBottles < 1)savedBottles = 1; 
             }
         }
 
@@ -179,7 +178,7 @@ namespace RNS
         private void OnDeath()
         {
 
-            gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
+            
             youDead.text = "You Died";
             youRespawn.text = "Click to Respawn";
             anim.SetTrigger("OnDeath");
@@ -212,6 +211,7 @@ namespace RNS
                     youRespawn.text ="";
                     oxygen = savedOxygen;
                     if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
+                    gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
                 }
             }
         }
