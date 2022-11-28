@@ -17,6 +17,7 @@ public class PowerBoxHandler : MonoBehaviour
     void Update()
     {
         
+        
     }
 
     private void OnCollisionEnter(Collision collision)
