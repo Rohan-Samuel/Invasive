@@ -213,7 +213,7 @@ namespace RNS
                     oxygen = savedOxygen;
                     if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
                     gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
-                    anim.Play("Blend Tree");
+                    anim.Play("Entry");
                 }
             }
         }
