@@ -13,11 +13,13 @@ namespace RNS
         public const float OXYGEN_REGEN = .2f;
         public float oxygen = 70;
         public Slider oxygenBar;
+        public Slider chargeBar;
         public float savedOxygen = 0;
         public bool isGainingO2 = false;
         public int oxygenReading;
 
         public TextMeshProUGUI oxygenText;
+        public TextMeshProUGUI bottleText;
 
         public bool isAlive;
         public bool killed;
@@ -78,7 +80,8 @@ namespace RNS
             UIBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
             UICharge = gameObject.GetComponent<ThrowingHandle>().getChargeCount();
 
-
+            chargeBar.value = UICharge;
+            bottleText.text = UIBottles.ToString();
             
         }
 
