@@ -52,7 +52,15 @@ namespace RNS
             inputHandler.TickInput(delta);
             HandleMovement(delta);
             HandleSprintingAndCrouching(delta);
-           
+            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rigidbody.AddForce(Vector3.up * 1000);
+                Debug.Log("space");
+            }
+            
+
+            
             
                 
         }

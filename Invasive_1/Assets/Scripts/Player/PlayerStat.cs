@@ -29,6 +29,13 @@ namespace RNS
 
         int savedBottles = 0;
 
+        public Animator anim;
+        public GameObject RespawnUI;
+        public AnimatorHandler animatorHandler;
+
+        public Rigidbody rigidbody;
+
+
         public int audioLogs = 0;
         public AudioSource audioSource; 
         public AudioClip audioLog0;
@@ -38,6 +45,10 @@ namespace RNS
         // Start is called before the first frame update
         void Start()
         {
+            anim = GetComponentInChildren<Animator>();
+            rigidbody = GetComponent<Rigidbody>();
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
+
             originalPos = gameObject.transform.position;
             oxygenBar.value = oxygen;
             oxygenReading = (int)oxygen;
@@ -74,6 +85,8 @@ namespace RNS
 
             if (isAlive == false || killed == true)
             {
+                rigidbody.AddForce(Vector3.down * 10000);
+                animatorHandler.canRotate = false;
                 OnDeath();
             }
 
@@ -136,13 +149,36 @@ namespace RNS
             oxygen = savedOxygen;
             if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
             gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
-            gameObject.transform.position = respawnLocation;
-            if (gameObject.transform.position == respawnLocation)
-            {
-                killed = false;
+
+            anim.SetTrigger("OnDeath");
+            StartCoroutine(DelayedRespawn(anim.GetCurrentAnimatorStateInfo(0).length));
+         
+            
+
+
+        }
+
+        IEnumerator DelayedRespawn(float _delay = 0)
+        {
+            yield return new WaitForSeconds(_delay);
+
+            
+            if (Input.GetMouseButton(0)) {
+                gameObject.transform.position = respawnLocation;
+                if (gameObject.transform.position == respawnLocation)
+                {
+                    killed = false;
+                    anim.Play("Blend Tree");
+                    isAlive = true;
+                    animatorHandler.canRotate = true;
+
+                }
             }
         }
 
-
+        public void Respawn()
+        {
+           
+        }
     }
 }
