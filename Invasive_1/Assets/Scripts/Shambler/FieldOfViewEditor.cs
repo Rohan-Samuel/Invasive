@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 //[CustomEditor(typeof(FieldOfView))]
 
-public class FieldOfViewEditor : Editor
+public class FieldOfViewEditor : MonoBehaviour
 {
 
      void OnSceneGUI()
