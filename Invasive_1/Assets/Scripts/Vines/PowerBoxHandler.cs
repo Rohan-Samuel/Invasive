@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PowerBoxHandler : MonoBehaviour
 {
-    public GameObject vines;
-    // Start is called before the first frame update
+    public GameObject parent;
+   // Start is called before the first frame update
     void Start()
     {
-        vines = transform.parent.gameObject;
+        parent = transform.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class PowerBoxHandler : MonoBehaviour
         if (collision.gameObject.tag == "Power")
         {
 
-            vines.GetComponent<Boss>().health--;
+            parent.GetComponent<Boss>().health--;
         }
     }
 }
