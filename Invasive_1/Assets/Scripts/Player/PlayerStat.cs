@@ -18,6 +18,8 @@ namespace RNS
         public bool isGainingO2 = false;
         public int oxygenReading;
 
+        public GameObject oxSound;
+
         public TextMeshProUGUI oxygenText;
         public TextMeshProUGUI bottleText;
 
@@ -46,6 +48,7 @@ namespace RNS
         // Start is called before the first frame update
         void Start()
         {
+            oxSound.SetActive(false);
             anim = GetComponentInChildren<Animator>();
             rigidbody = GetComponent<Rigidbody>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
@@ -62,6 +65,7 @@ namespace RNS
         {
             if (isGainingO2){
                 oxygen= oxygen + OXYGEN_REGEN;
+                oxSound.SetActive(true);
                 if(oxygen > MAX_OXYGEN){
                     oxygen = MAX_OXYGEN;
                 }
