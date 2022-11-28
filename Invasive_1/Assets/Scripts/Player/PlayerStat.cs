@@ -93,7 +93,7 @@ namespace RNS
             else if (collision.gameObject.layer.Equals(11))
             {
                 Debug.Log("Got Audio Log");
-                audioSource.PlayOneShot(audioLog0, 0.5f);
+                //audioSource.PlayOneShot(audioLog0, 0.5f);
             }
             else if (collision.gameObject.layer.Equals(6))
             {
