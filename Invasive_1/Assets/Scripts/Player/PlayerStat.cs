@@ -20,6 +20,8 @@ namespace RNS
 
         public TextMeshProUGUI oxygenText;
         public TextMeshProUGUI bottleText;
+        public TextMeshProUGUI youDead;
+        public TextMeshProUGUI youRespawn;
 
         public bool isAlive;
         public bool killed;
@@ -45,6 +47,8 @@ namespace RNS
         // Start is called before the first frame update
         void Start()
         {
+            youDead.text = "";
+            youRespawn.text = "";
             anim = GetComponentInChildren<Animator>();
             rigidbody = GetComponent<Rigidbody>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
@@ -149,7 +153,8 @@ namespace RNS
             oxygen = savedOxygen;
             if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
             gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
-
+            youDead.text = "You Died";
+            youRespawn.text = "Click to Respawn";
             anim.SetTrigger("OnDeath");
             StartCoroutine(DelayedRespawn(anim.GetCurrentAnimatorStateInfo(0).length));
          
@@ -171,7 +176,8 @@ namespace RNS
                     anim.Play("Blend Tree");
                     isAlive = true;
                     animatorHandler.canRotate = true;
-
+                    youDead.text = "";
+                    youRespawn.text ="";
                 }
             }
         }

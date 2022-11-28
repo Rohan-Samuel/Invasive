@@ -18,6 +18,7 @@ TagManager:
   - NearBottle
   - NearbyDude
   - NearbyVine
+  - Stairs
   layers:
   - Default
   - TransparentFX
