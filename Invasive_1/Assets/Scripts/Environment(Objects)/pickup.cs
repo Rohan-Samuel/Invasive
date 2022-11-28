@@ -12,6 +12,7 @@ public class pickup : MonoBehaviour
     public int pickupValue;
 
     public bool inRange = false;
+    public bool consumable;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class pickup : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && inRange){
-            Destroy(gameObject);
+            if(consumable)Destroy(gameObject);
         }
     }
 
@@ -41,6 +42,9 @@ public class pickup : MonoBehaviour
             if(pickupValue == 0){
                 other.gameObject.GetComponent<pickupNearby>().pickupActivate(1,0);
             }
+            else if (pickupValue == 69){
+                other.gameObject.GetComponent<pickupNearby>().pickupActivate(69,0);
+            }
             else{
                 other.gameObject.GetComponent<pickupNearby>().pickupActivate(pickupValue,1);
             }
@@ -52,6 +56,9 @@ public class pickup : MonoBehaviour
             gameObject.GetComponent<Renderer>().material = standard;
             if(pickupValue == 0){
                 other.gameObject.GetComponent<pickupNearby>().pickupActivate(-1,0);
+            }
+            else if (pickupValue == 69){
+                other.gameObject.GetComponent<pickupNearby>().pickupActivate(-69,0);
             }
             else{
                 other.gameObject.GetComponent<pickupNearby>().pickupActivate(0,1);

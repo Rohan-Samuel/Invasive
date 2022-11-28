@@ -23,6 +23,8 @@ public class ThrowingHandle : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
+            if(bottles > 3)bottles = 3;
+            
              if (Input.GetKeyUp(KeyCode.Mouse0) && bottles >= 1){
                 if(throwingCharge >= 60){
                     GameObject projectile = Instantiate(objectToThrow, throwPoint.position, cam.rotation);

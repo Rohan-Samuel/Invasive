@@ -18,9 +18,15 @@ public class pickupNearby : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(nearbyBottles == -69)nearbyBottles = 0;
+        
         if(Input.GetKeyDown(KeyCode.E)){
             if(nearbyBottles > 0){
-                for (int i = 0; i < nearbyBottles; i++){
+                int num;
+                if(nearbyBottles > 3)num = 3;
+                else num = nearbyBottles;
+
+                for (int i = 0; i < num; i++){
                     mainPlayer.GetComponent<ThrowingHandle>().getBottle();
                 }
                 nearbyBottles = 0;

@@ -102,7 +102,9 @@ MonoBehaviour:
   clip: {fileID: 0}
   standard: {fileID: 2100000, guid: 07f2cdcd8b885c24fb17066b8f9aa614, type: 2}
   grabbable: {fileID: 2100000, guid: 4886bdbe24624ce428dce977e0ccec2c, type: 2}
+  pickupValue: 0
   inRange: 0
+  consumable: 1
 --- !u!64 &-7965559775129362221
 MeshCollider:
   m_ObjectHideFlags: 0

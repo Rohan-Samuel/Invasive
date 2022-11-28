@@ -216,6 +216,7 @@ MonoBehaviour:
   grabbable: {fileID: 2100000, guid: 2819f923b31756b46a5cbd19837bd0da, type: 2}
   pickupValue: 0
   inRange: 0
+  consumable: 1
 --- !u!64 &1353962778648120055
 MeshCollider:
   m_ObjectHideFlags: 0
