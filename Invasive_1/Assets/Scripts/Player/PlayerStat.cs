@@ -120,6 +120,7 @@ namespace RNS
             chargeBar.value = UICharge;
             bottleText.text = UIBottles.ToString();
             
+
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -212,6 +213,7 @@ namespace RNS
                     oxygen = savedOxygen;
                     if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
                     gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
+                    anim.Play("Blend Tree");
                 }
             }
         }
