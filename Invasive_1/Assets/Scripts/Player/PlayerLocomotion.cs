@@ -13,6 +13,7 @@ namespace RNS
         [HideInInspector]
         public AnimatorHandler animatorHandler;
 
+        public CapsuleCollider capsuleCollider;
         public new Rigidbody rigidbody;
         public GameObject normalCamera;
 
@@ -25,11 +26,16 @@ namespace RNS
         float crouchSpeed = 1;
           [SerializeField]
         float rotationSpeed = 10;
+        [SerializeField]
+        float crouchHeight = 1;
+        float standHeight = 2;
+
 
         public bool isCrouching;
 
         void Start()
         {
+            capsuleCollider = GetComponent<CapsuleCollider>();
             rigidbody = GetComponent<Rigidbody>();
             inputHandler = GetComponent<InputHandler>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
@@ -90,6 +96,8 @@ namespace RNS
 
             if(inputHandler.crouchHoldFlag)
             {
+                capsuleCollider.height = crouchHeight;
+                capsuleCollider.center = new Vector3(0,0.5f,0);
                 speed = crouchSpeed;
                 isCrouching = true;
                 moveDirection *= speed;
@@ -97,7 +105,8 @@ namespace RNS
             else
             {
                 moveDirection *= speed;
-
+                capsuleCollider.height = standHeight;
+                capsuleCollider.center = new Vector3(0, 1, 0);
             }
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
@@ -111,12 +120,14 @@ namespace RNS
             }
         }
 
+
         public void HandleSprintingAndCrouching(float delta)
         {
             if (animatorHandler.anim.GetBool("isInteracting"))
                 return;
 
             if (inputHandler.crouchFlag)
+
             {
                 moveDirection = cameraObject.forward * inputHandler.vertical;
                 moveDirection += cameraObject.right * inputHandler.horizontal;
