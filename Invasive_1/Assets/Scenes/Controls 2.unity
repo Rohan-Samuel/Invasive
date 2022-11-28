@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -913,6 +913,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31a17851ceca2ca4f88747a7cd7755b6, type: 3}
+--- !u!1 &982373854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6860581882431284311, guid: 3801a85d245570a4087a03967158df29, type: 3}
+  m_PrefabInstance: {fileID: 1019909059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1019909059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -924,6 +929,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1019909061}
+    - target: {fileID: 6332813627798771261, guid: 3801a85d245570a4087a03967158df29, type: 3}
+      propertyPath: aiming
+      value: 
+      objectReference: {fileID: 982373854}
     - target: {fileID: 6860581882431284300, guid: 3801a85d245570a4087a03967158df29, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1000,6 +1009,10 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6860581882431284304, guid: 3801a85d245570a4087a03967158df29, type: 3}
+      propertyPath: capsuleCollider
+      value: 
+      objectReference: {fileID: 1019909071}
     - target: {fileID: 6860581882431284306, guid: 3801a85d245570a4087a03967158df29, type: 3}
       propertyPath: m_Mass
       value: 1000000
@@ -1012,6 +1025,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7761381483301516185, guid: 3801a85d245570a4087a03967158df29, type: 3}
+      propertyPath: flashlight
+      value: 
+      objectReference: {fileID: 1366823622}
     - target: {fileID: 8299792301941801915, guid: 3801a85d245570a4087a03967158df29, type: 3}
       propertyPath: m_Avatar
       value: 
@@ -1038,6 +1055,11 @@ Rigidbody:
 --- !u!95 &1019909061 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8299792301941801915, guid: 3801a85d245570a4087a03967158df29, type: 3}
+  m_PrefabInstance: {fileID: 1019909059}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1019909071 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 6860581882431284307, guid: 3801a85d245570a4087a03967158df29, type: 3}
   m_PrefabInstance: {fileID: 1019909059}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1314427938
@@ -1248,8 +1270,8 @@ RectTransform:
   m_GameObject: {fileID: 1367564365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0703428, y: 1.5925713, z: 1.5925713}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 3.076923, z: 3.076923}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 660599138}
   m_RootOrder: 1
@@ -1525,15 +1547,15 @@ RectTransform:
   m_GameObject: {fileID: 1914365499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2053514, y: 1.6037751, z: 1.6037751}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 2.908879, z: 2.908879}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 660599138}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -147, y: 128}
+  m_AnchoredPosition: {x: -199, y: 128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914365501
