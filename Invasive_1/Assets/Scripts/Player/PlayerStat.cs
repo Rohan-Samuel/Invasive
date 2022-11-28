@@ -32,6 +32,7 @@ namespace RNS
         public Animator anim;
         public GameObject RespawnUI;
         public AnimatorHandler animatorHandler;
+        public TextMeshProUGUI myTMP;
 
         public Rigidbody rigidbody;
 
@@ -151,6 +152,8 @@ namespace RNS
             gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
 
             anim.SetTrigger("OnDeath");
+            myTMP.text = "Click Anywhere to Respawn";
+
             StartCoroutine(DelayedRespawn(anim.GetCurrentAnimatorStateInfo(0).length));
          
             
@@ -162,16 +165,18 @@ namespace RNS
         {
             yield return new WaitForSeconds(_delay);
 
-            
+            myTMP.text = "";
+
+
             if (Input.GetMouseButton(0)) {
                 gameObject.transform.position = respawnLocation;
+                anim.Play("Blend Tree");
+
                 if (gameObject.transform.position == respawnLocation)
                 {
                     killed = false;
-                    anim.Play("Blend Tree");
                     isAlive = true;
                     animatorHandler.canRotate = true;
-
                 }
             }
         }
