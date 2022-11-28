@@ -55,11 +55,11 @@ namespace RNS
             HandleMovement(delta);
             HandleSprintingAndCrouching(delta);
             
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                rigidbody.AddForce(Vector3.up * 1000);
-                Debug.Log("space");
-            }
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    rigidbody.AddForce(Vector3.up * 1000);
+            //    Debug.Log("space");
+            // }
             
 
             
