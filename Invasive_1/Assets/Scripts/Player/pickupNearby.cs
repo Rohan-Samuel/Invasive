@@ -26,7 +26,7 @@ public class pickupNearby : MonoBehaviour
                 nearbyBottles = 0;
             }
             if(audioLogID > 0){
-                audioLogUIBlock.GetComponent<AudioLogDisplay>().modifyDisplay(audioLogID);
+                audioLogUIBlock.GetComponent<RNS.PlayerStat>().audioDisplayPopup(audioLogID);
                 audioLogID = 0;
             }
         }

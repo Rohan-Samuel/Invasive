@@ -25,6 +25,7 @@ namespace RNS
         public TextMeshProUGUI youDead;
         public TextMeshProUGUI youRespawn;
         public TextMeshProUGUI saveText;
+        public TextMeshProUGUI pickupText;
 
         public bool isAlive;
         public bool killed;
@@ -48,12 +49,15 @@ namespace RNS
 
         public int UIBottles, UICharge;
 
+        int activeAudioLog = 0;
+
         // Start is called before the first frame update
         void Start()
         {
             //oxSound.SetActive(false);
             youDead.text = "";
             youRespawn.text = "";
+            pickupText.text = "";
             anim = GetComponentInChildren<Animator>();
             rigidbody = GetComponent<Rigidbody>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
@@ -68,10 +72,16 @@ namespace RNS
         // Update is called once per frame
         void Update()
         {
+            activeAudioLog--;
             if(Input.GetKeyDown(KeyCode.Mouse0)){
                 Screen.lockCursor = true;
                 Cursor.visible = false;
             }
+            if(activeAudioLog < 0){
+                pickupText.text = "";
+            }
+
+
             if (isGainingO2){
                 oxygen= oxygen + OXYGEN_REGEN;
                // oxSound.SetActive(true);
@@ -209,6 +219,15 @@ namespace RNS
         public void Respawn()
         {
            
+        }
+
+        public void audioDisplayPopup(int i){
+            if(i == 0)pickupText.text = "";
+            else {
+                
+                pickupText.text = "Got Audio Log #" + i.ToString();
+                activeAudioLog = 120;
+            }
         }
     }
 }
