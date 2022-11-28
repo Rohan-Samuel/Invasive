@@ -184,6 +184,8 @@ MonoBehaviour:
   attackRange: 2.5
   target: {fileID: 6860581882431284300, guid: 3801a85d245570a4087a03967158df29, type: 3}
   turnSpeed: 2
+  huntTime: 0
+  focuslevel: 0
 --- !u!114 &367495982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +343,8 @@ MonoBehaviour:
   attackRange: 7
   target: {fileID: 0}
   turnSpeed: 2
+  huntTime: 0
+  focuslevel: 0
 --- !u!4 &1082496794115895079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 152e37228d195d74a87790e86207cdec, type: 3}
@@ -364,8 +368,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
---- !u!136 &4835514117524138441
-CapsuleCollider:
+--- !u!135 &8708173615651549430
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -374,9 +378,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.03
-  m_Height: 0
-  m_Direction: 1
+  serializedVersion: 2
+  m_Radius: 0.01
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1528686913872048090
 PrefabInstance:
