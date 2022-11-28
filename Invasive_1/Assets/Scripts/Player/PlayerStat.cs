@@ -67,12 +67,17 @@ namespace RNS
         // Update is called once per frame
         void Update()
         {
+            
             if (isGainingO2){
                 oxygen= oxygen + OXYGEN_REGEN;
                 oxSound.SetActive(true);
                 if(oxygen > MAX_OXYGEN){
                     oxygen = MAX_OXYGEN;
+                    oxSound.SetActive(false);
                 }
+            }
+            else{
+                oxSound.SetActive(false);
             }
 
             oxygenBar.value = oxygen;
