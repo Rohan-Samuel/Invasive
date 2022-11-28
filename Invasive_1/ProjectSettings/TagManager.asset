@@ -19,6 +19,7 @@ TagManager:
   - NearbyDude
   - NearbyVine
   - Stairs
+  - FungusZone
   layers:
   - Default
   - TransparentFX

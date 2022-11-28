@@ -18,7 +18,7 @@ namespace RNS
         public bool isGainingO2 = false;
         public int oxygenReading;
 
-        //public GameObject oxSound;
+        public GameObject oxSound;
 
         public TextMeshProUGUI oxygenText;
         public TextMeshProUGUI bottleText;
@@ -51,10 +51,12 @@ namespace RNS
 
         int activeAudioLog = 0;
 
+        bool chokeZone = false;
+
         // Start is called before the first frame update
         void Start()
         {
-            //oxSound.SetActive(false);
+            oxSound.SetActive(false);
             youDead.text = "";
             youRespawn.text = "";
             pickupText.text = "";
@@ -81,10 +83,9 @@ namespace RNS
                 pickupText.text = "";
             }
 
-
-            if (isGainingO2){
+            if (isGainingO2 && !chokeZone){
                 oxygen= oxygen + OXYGEN_REGEN;
-               // oxSound.SetActive(true);
+                oxSound.SetActive(true);
                 if(oxygen > MAX_OXYGEN){
                     oxygen = MAX_OXYGEN;
                     oxSound.SetActive(false);
@@ -101,6 +102,9 @@ namespace RNS
             if (oxygen > 0)
             {
                 oxygen -= Time.deltaTime*1;
+                if(chokeZone){
+                    oxygen -= Time.deltaTime*3;
+                }
                 isAlive = true;
             }
             
@@ -159,6 +163,9 @@ namespace RNS
 
                 saveText.text = "";
             }
+            else if(other.gameObject.tag == "FungusZone"){
+                chokeZone = false;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -176,6 +183,9 @@ namespace RNS
                 savedOxygen = oxygen;
                 savedBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
                 if(savedBottles < 1)savedBottles = 1; 
+            }
+            else if(other.gameObject.tag == "FungusZone"){
+                chokeZone = true;
             }
         }
 
