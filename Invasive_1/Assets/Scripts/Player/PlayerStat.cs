@@ -87,7 +87,11 @@ namespace RNS
                // oxSound.SetActive(true);
                 if(oxygen > MAX_OXYGEN){
                     oxygen = MAX_OXYGEN;
+                    oxSound.SetActive(false);
                 }
+            }
+            else{
+                oxSound.SetActive(false);
             }
 
             oxygenBar.value = oxygen;
