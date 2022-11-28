@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-[CustomEditor(typeof(FieldOfView))]
+//[CustomEditor(typeof(FieldOfView))]
 
 public class FieldOfViewEditor : Editor
 {
 
      void OnSceneGUI()
     {
-        FieldOfView fov = (FieldOfView) target;
+      /*  FieldOfView fov = (FieldOfView) target;
         Handles.color = Color.white;
         Handles.DrawWireArc(fov.transform.position, Vector3.up, Vector3.forward, 360, fov.viewRadius);
         Vector3 viewAngleA = fov.DirFromAngle (-fov.viewAngle / 2, false);
@@ -21,7 +21,7 @@ public class FieldOfViewEditor : Editor
         Handles.color = Color.red;
         foreach (Transform visibleTarget in fov.visibleTarget){
             Handles.DrawLine (fov.transform.position, visibleTarget.position);
-        }
+        }*/
     }
    
 }
