@@ -24,6 +24,7 @@ namespace RNS
         public TextMeshProUGUI bottleText;
         public TextMeshProUGUI youDead;
         public TextMeshProUGUI youRespawn;
+        public TextMeshProUGUI saveText;
 
         public bool isAlive;
         public bool killed;
@@ -134,6 +135,13 @@ namespace RNS
             {
                 isGainingO2 = false;
             }
+            else if(other.gameObject.tag == "Respawn")
+            {
+                respawnLocation = gameObject.transform.position;
+                savedOxygen = oxygen;
+                savedBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
+                saveText.text = "";
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -146,6 +154,7 @@ namespace RNS
                         
             else if(other.gameObject.tag == "Respawn")
             {
+                saveText.text = "Saving...";
                 respawnLocation = gameObject.transform.position;
                 savedOxygen = oxygen;
                 savedBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
@@ -161,7 +170,7 @@ namespace RNS
             youDead.text = "You Died";
             youRespawn.text = "Click to Respawn";
             anim.SetTrigger("OnDeath");
-            myTMP.text = "Click Anywhere to Respawn";
+            //myTMP.text = "Click Anywhere to Respawn";
 
             StartCoroutine(DelayedRespawn(anim.GetCurrentAnimatorStateInfo(0).length));
          
@@ -174,7 +183,7 @@ namespace RNS
         {
             yield return new WaitForSeconds(_delay);
 
-            myTMP.text = "";
+            //myTMP.text = "";
 
 
             if (Input.GetMouseButton(0)) {
