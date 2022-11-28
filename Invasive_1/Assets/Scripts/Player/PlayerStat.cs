@@ -22,6 +22,8 @@ namespace RNS
 
         public TextMeshProUGUI oxygenText;
         public TextMeshProUGUI bottleText;
+        public TextMeshProUGUI youDead;
+        public TextMeshProUGUI youRespawn;
 
         public bool isAlive;
         public bool killed;
@@ -49,6 +51,8 @@ namespace RNS
         void Start()
         {
             oxSound.SetActive(false);
+            youDead.text = "";
+            youRespawn.text = "";
             anim = GetComponentInChildren<Animator>();
             rigidbody = GetComponent<Rigidbody>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
@@ -154,7 +158,8 @@ namespace RNS
             oxygen = savedOxygen;
             if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
             gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
-
+            youDead.text = "You Died";
+            youRespawn.text = "Click to Respawn";
             anim.SetTrigger("OnDeath");
             myTMP.text = "Click Anywhere to Respawn";
 
@@ -181,6 +186,8 @@ namespace RNS
                     killed = false;
                     isAlive = true;
                     animatorHandler.canRotate = true;
+                    youDead.text = "";
+                    youRespawn.text ="";
                 }
             }
         }

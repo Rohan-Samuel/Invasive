@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VenusFlyTrapJoint
       objectReference: {fileID: 0}
+    - target: {fileID: 5418252380809294293, guid: 005d0534452f1ad40aac7065e284b80d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fd1a555ad9bc88e47a8333b2f393165a, type: 2}
     - target: {fileID: 7927586631240776539, guid: 005d0534452f1ad40aac7065e284b80d, type: 3}
       propertyPath: m_Layer
       value: 7
