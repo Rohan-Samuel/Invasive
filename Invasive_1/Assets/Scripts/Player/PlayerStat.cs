@@ -90,7 +90,7 @@ namespace RNS
             if(collision.gameObject.layer.Equals(7))
             {
                 killed = true;
-                Debug.Log("Touched");
+                Debug.Log("Touched" + collision.gameObject.name);
                 OnDeath();
             }
             else if (collision.gameObject.layer.Equals(11))

@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2880652429528885885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.004700025, y: 0.17519999, z: -0.010499954}
-  m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 0.049999997}
+  m_LocalPosition: {x: -0.004700025, y: 0.185, z: 0.0105}
+  m_LocalScale: {x: 0.10000001, y: 0.10000001, z: 0.10000001}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1082496794115895079}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 3465700354464457508}
   - component: {fileID: 8814836871089414092}
   - component: {fileID: 1405597376089746314}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Sphere
   m_TagString: NearbyDude
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 7675752920395989219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8520178004077140511}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 504530784}
   - component: {fileID: 367495982}
   - component: {fileID: 8937687173197994920}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: VineRemake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,19 +454,18 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!136 &4835514117524138441
 CapsuleCollider:
---- !u!114 &4012442403846716459
-MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5768823641989877347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1797a03ad32d43c48872b049e45c297c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &8708173615651549430
 SphereCollider:
   m_ObjectHideFlags: 0
