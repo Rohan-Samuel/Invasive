@@ -14,6 +14,7 @@ public class FollowScript : MonoBehaviour
     public int stunTimer = 0;
     public int waitDuration;
     private int pauseTime;
+    Vector3 startPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class FollowScript : MonoBehaviour
         pauseTime = waitDuration;
         focuslevel = 0;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        startPoint = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
     // Update is called once per frame
@@ -36,21 +38,20 @@ public class FollowScript : MonoBehaviour
             transform.LookAt(doNotTurn);
         }
         else if (stunTimer < 0){
-            Transform wp = waypoints[currentWaypointIndex];
-                if (Vector3.Distance(transform.position, wp.position)< 0.1f)
+            //Transform wp = startPoint;
+                if (Vector3.Distance(transform.position, startPoint)< 0.1f)
                 {
-                    pauseTime--;
-                    if(pauseTime == 0){
-                        pauseTime = waitDuration;
-                        currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
-                    }
+                    // pauseTime--;
+                    //if(pauseTime == 0){
+                    //    pauseTime = waitDuration;
+                    //    currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+                    //}
                 }
-
                 else
                 {
-                    agent.SetDestination(wp.position);
-                    transform.position = Vector3.MoveTowards(transform.position, wp.position, (focuslevel*speed)/6 * Time.deltaTime);
-                    Vector3 doNotTurn = new Vector3(wp.position.x, gameObject.transform.position.y, wp.position.z);
+                    agent.SetDestination(startPoint);
+                    transform.position = Vector3.MoveTowards(transform.position, startPoint, (focuslevel*speed)/6 * Time.deltaTime);
+                    Vector3 doNotTurn = new Vector3(startPoint.x, gameObject.transform.position.y, startPoint.z);
                     transform.LookAt(doNotTurn);
                 }
                 
