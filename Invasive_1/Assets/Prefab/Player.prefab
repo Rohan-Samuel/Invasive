@@ -294,8 +294,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9fb49cd3feb5f449cebd5efec37831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEFAULT_VISUAL_STEALTH: 2
-  DEFAULT_AUDIO_STEALTH: 2
+  VISUAL_STEALTH: 3
+  AUDIO_STEALTH: 2
 --- !u!114 &6860581882431284305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,8 +367,8 @@ MonoBehaviour:
   animatorHandler: {fileID: 0}
   rigidbody: {fileID: 0}
   normalCamera: {fileID: 0}
-  movementSpeed: 4
-  crouchSpeed: 1.5
+  movementSpeed: 5.5
+  crouchSpeed: 3
   rotationSpeed: 8
   isCrouching: 0
 --- !u!114 &6860581882431284301
@@ -394,6 +394,8 @@ MonoBehaviour:
   audioLogs: 0
   audioSource: {fileID: 6681893026000905469}
   audioLog0: {fileID: 8300000, guid: 173dfc9955a211e41930d49d228838d2, type: 3}
+  UIBottles: 0
+  UICharge: 0
 --- !u!82 &6681893026000905469
 AudioSource:
   m_ObjectHideFlags: 0

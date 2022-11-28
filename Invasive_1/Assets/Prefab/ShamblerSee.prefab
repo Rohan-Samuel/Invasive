@@ -2346,6 +2346,8 @@ MonoBehaviour:
   speed: 3
   huntTime: 0
   waypoints: []
+  stunTimer: 0
+  waitDuration: 0
 --- !u!195 &6586007360787330346
 NavMeshAgent:
   m_ObjectHideFlags: 0
