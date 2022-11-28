@@ -164,8 +164,7 @@ namespace RNS
 
         private void OnDeath()
         {
-            oxygen = savedOxygen;
-            if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
+
             gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
             youDead.text = "You Died";
             youRespawn.text = "Click to Respawn";
@@ -197,6 +196,8 @@ namespace RNS
                     animatorHandler.canRotate = true;
                     youDead.text = "";
                     youRespawn.text ="";
+                    oxygen = savedOxygen;
+                    if (oxygen < MIN_OXYGEN)oxygen = MIN_OXYGEN;
                 }
             }
         }
