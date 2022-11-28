@@ -11,7 +11,7 @@ public class OpenMe : MonoBehaviour
 
     public GameObject door;
 
-    public GameObject gateSound;
+    //public GameObject gateSound;
 
     Transform target;
 
@@ -20,7 +20,7 @@ public class OpenMe : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gateSound.SetActive(false);
+       // gateSound.SetActive(false);
         
     }
 
@@ -39,7 +39,7 @@ public class OpenMe : MonoBehaviour
     
     public void openIt(){
         open = true;
-        gateSound.SetActive(true);
+        //gateSound.SetActive(true);
     }
 
     public void closeIt(){
