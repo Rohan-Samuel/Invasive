@@ -20,6 +20,8 @@ namespace RNS
 
         public float turnSpeed = 2f;
 
+        public int huntTime = 0;
+        public int focuslevel = 0;
 
         float DistanceToPlayer()
         {
@@ -96,7 +98,23 @@ namespace RNS
         {
             fsm.OnLogic();
 
-            
+            huntTime--;
+            if(huntTime < 0){
+                focuslevel = 0;
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+            }
         }
+
+        public void setTarget(Transform t, int intensity){
+        if(t == target){
+            huntTime = (intensity * 100);
+        }
+        else if (intensity > focuslevel){
+            target = t;
+            huntTime = (intensity * 100);
+            focuslevel = intensity;
+        }
+    }
+
     }
 }

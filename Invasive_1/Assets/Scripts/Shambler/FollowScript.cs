@@ -11,7 +11,7 @@ public class FollowScript : MonoBehaviour
     public int huntTime;
     public Transform[] waypoints;
     private int currentWaypointIndex = 0;
-    private int stunTimer = 0;
+    public int stunTimer = 0;
     public int waitDuration;
     private int pauseTime;
 
@@ -28,7 +28,7 @@ public class FollowScript : MonoBehaviour
     {
         stunTimer--;
         huntTime--;
-        if(target != null && huntTime > 0 && stunTimer < 0){
+        if((target != null) && (huntTime > 0) && (stunTimer < 0)){
             
             agent.SetDestination(target.position);
             agent.transform.position = Vector3.MoveTowards(transform.position, target.position, (focuslevel*speed)/6  * Time.deltaTime);
@@ -56,6 +56,9 @@ public class FollowScript : MonoBehaviour
                 
             focuslevel = 0;
         }
+        else {
+            agent.transform.position = Vector3.MoveTowards(transform.position, transform.position, 0);
+        }
     }
     public void setTarget(Transform t, int intensity){
         if(t == target){
@@ -73,7 +76,7 @@ public class FollowScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision){
         if(collision.gameObject.tag == "Throwable"){
-            stunTimer = 120;
+            stunTimer = 180;
             Debug.Log("oww");
         }
     }
