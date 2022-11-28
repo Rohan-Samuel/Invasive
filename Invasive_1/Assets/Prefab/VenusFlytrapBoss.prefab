@@ -218,7 +218,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4398530641660298182
+--- !u!114 &4398530641660298177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,10 +227,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3588191882350053192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bdd9dc094876e4da7c4042694a8094, type: 3}
+  m_Script: {fileID: 11500000, guid: 85dc9a9227f236e4aa2fe50493ba9415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  tip: {fileID: 0}
 --- !u!114 &4398530641660298178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   target: {fileID: 0}
   turnSpeed: 2
---- !u!114 &4398530641660298177
+--- !u!114 &4398530641660298182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -258,10 +258,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3588191882350053192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85dc9a9227f236e4aa2fe50493ba9415, type: 3}
+  m_Script: {fileID: 11500000, guid: 68bdd9dc094876e4da7c4042694a8094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tip: {fileID: 0}
+  health: 3
 --- !u!4 &4215370544538328562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 005d0534452f1ad40aac7065e284b80d, type: 3}
@@ -313,4 +313,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1797a03ad32d43c48872b049e45c297c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vines: {fileID: 0}
+  parent: {fileID: 3588191882350053192}
