@@ -68,6 +68,10 @@ namespace RNS
         // Update is called once per frame
         void Update()
         {
+            if(Input.GetKeyDown(KeyCode.Mouse0)){
+                Screen.lockCursor = true;
+                Cursor.visible = false;
+            }
             if (isGainingO2){
                 oxygen= oxygen + OXYGEN_REGEN;
                // oxSound.SetActive(true);
