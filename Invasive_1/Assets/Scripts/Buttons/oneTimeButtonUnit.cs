@@ -9,13 +9,11 @@ public class oneTimeButtonUnit : MonoBehaviour
     public GameObject lightBulb;
     public GameObject button;
     public GameObject buttonSound;
-    public GameObject gateSound;
     // Start is called before the first frame update
     void Start()
     {
         buttonSound.SetActive(false);
-        gateSound.SetActive(false);
-        
+
     }
 
     // Update is called once per frame
@@ -30,15 +28,13 @@ public class oneTimeButtonUnit : MonoBehaviour
         
         if(((collision.gameObject.tag == "NearbyDude") | (collision.gameObject.tag == "NearPlayer")) && (activated == false))
         {
+            buttonSound.SetActive(true);
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
             button.gameObject.transform.position += new Vector3(0,-1,0);
-            buttonSound.SetActive(true);
-            gateSound.SetActive(true);
+            
+
         }
-        else{
-            buttonSound.SetActive(false);
-            gateSound.SetActive(false);
-        }
+      
     }
 }
