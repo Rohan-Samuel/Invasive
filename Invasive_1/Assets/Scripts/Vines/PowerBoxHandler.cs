@@ -5,11 +5,11 @@ using UnityEngine;
 public class PowerBoxHandler : MonoBehaviour
 {
     public GameObject parent;
-    public GameObject powSound;
+    // public GameObject powSound;
    // Start is called before the first frame update
     void Start()
     {
-        powSound.SetActive(false);
+        // powSound.SetActive(false);
         parent = transform.parent.gameObject;
     }
 
@@ -26,7 +26,7 @@ public class PowerBoxHandler : MonoBehaviour
         {
 
             parent.GetComponent<Boss>().health--;
-            powSound.SetActive(true);
+            // powSound.SetActive(true);
         }
     }
 }

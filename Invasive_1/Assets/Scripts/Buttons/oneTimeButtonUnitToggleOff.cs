@@ -9,13 +9,12 @@ public class oneTimeButtonUnitToggleOff : MonoBehaviour
     public GameObject lightBulb;
     public GameObject button;
     public GameObject buttonSound;
-    public GameObject gateSound;
 
     public GameObject otherButton;
     // Start is called before the first frame update
     void Start()
     {
-        
+        buttonSound.SetActive(false);
         button.gameObject.transform.position += new Vector3(0,-1,0);
     }
 
@@ -31,6 +30,7 @@ public class oneTimeButtonUnitToggleOff : MonoBehaviour
         
         if(((collision.gameObject.tag == "NearbyDude") | (collision.gameObject.tag == "NearPlayer")) && (activated == false))
         {
+            buttonSound.SetActive(true);
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
             button.gameObject.transform.position += new Vector3(0,-1,0);
