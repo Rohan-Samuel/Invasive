@@ -8,10 +8,11 @@ public class HeldButtonUnit : MonoBehaviour
     public bool activated = false; 
     public GameObject lightBulb;
     public GameObject button;
+    public GameObject buttonSound;
     // Start is called before the first frame update
     void Start()
     {
-        
+        buttonSound.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class HeldButtonUnit : MonoBehaviour
     {
         if((collision.gameObject.tag == "NearbyDude") |  (collision.gameObject.tag == "NearPlayer"))
         {
+            buttonSound.SetActive(true);
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
             button.gameObject.transform.position += new Vector3(0,-1,0);

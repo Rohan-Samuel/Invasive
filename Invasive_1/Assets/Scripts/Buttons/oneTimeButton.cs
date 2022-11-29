@@ -26,10 +26,11 @@ public class oneTimeButton : MonoBehaviour
         if(collision.gameObject.tag == "NearbyDude") Debug.Log("Detect Enemy");
         if((collision.gameObject.tag == "NearbyDude") && (activated == false))
         {
+            buttonSound.SetActive(true);
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
             button.gameObject.transform.position += new Vector3(0,-1,0);
-            buttonSound.SetActive(true);
+            
         }
     }
 }
