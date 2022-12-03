@@ -27,7 +27,7 @@ public class HeldButtonUnit : MonoBehaviour
             buttonSound.SetActive(true);
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
-            button.gameObject.transform.position += new Vector3(0,-1,0);
+            button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;
         }
     }
     private void OnTriggerExit(Collider collision)
@@ -36,7 +36,7 @@ public class HeldButtonUnit : MonoBehaviour
         {
             activated = false;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
-            button.gameObject.transform.position += new Vector3(0,1,0);
+            button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * 20;
         }
     }
 }

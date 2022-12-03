@@ -31,7 +31,7 @@ public class oneTimeButtonUnit : MonoBehaviour
             //buttonSound.SetActive(true);
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
-            button.gameObject.transform.position += new Vector3(0,-1,0);
+            button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;
             
 
         }

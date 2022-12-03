@@ -32,13 +32,13 @@ public class oneTimeButtonUnitToggleOn : MonoBehaviour
         {
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
-            button.gameObject.transform.position += new Vector3(0,-1,0);
+            button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;
 
             otherButton.gameObject.GetComponent<oneTimeButtonUnitToggleOff>().otherButtonPressed();
         }
     }
     public void otherButtonPressed(){
         activated = false;
-        button.gameObject.transform.position += new Vector3(0,1,0);
+        button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * 20;
     }
 }

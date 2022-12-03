@@ -9,6 +9,8 @@ public class oneTimeButton : MonoBehaviour
     public GameObject lightBulb;
     public GameObject button;
     public GameObject buttonSound;
+
+    public GameObject top, bottom;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class oneTimeButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnTriggerStay(Collider collision)
     {
@@ -29,7 +31,7 @@ public class oneTimeButton : MonoBehaviour
             buttonSound.SetActive(true);
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
-            button.gameObject.transform.position += new Vector3(0,-1,0);
+            button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;
             
         }
     }
