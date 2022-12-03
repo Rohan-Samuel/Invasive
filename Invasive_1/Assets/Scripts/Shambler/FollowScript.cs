@@ -19,9 +19,11 @@ public class FollowScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         pauseTime = waitDuration;
         focuslevel = 0;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.speed = speed;
         startPoint = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
@@ -36,6 +38,9 @@ public class FollowScript : MonoBehaviour
             agent.transform.position = Vector3.MoveTowards(transform.position, target.position, (focuslevel*speed)/6  * Time.deltaTime);
             Vector3 doNotTurn = new Vector3(target.position.x, gameObject.transform.position.y, target.position.z);
             transform.LookAt(doNotTurn);
+        }
+        else if (stunTimer == 0){
+            agent.speed = speed;
         }
         else if (stunTimer < 0){
             //Transform wp = startPoint;
@@ -77,7 +82,8 @@ public class FollowScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision){
         if(collision.gameObject.tag == "Throwable"){
-            stunTimer = 180;
+            stunTimer = 120;
+            agent.speed = 0;
             Debug.Log("oww");
         }
     }
