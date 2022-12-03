@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7927586631240776539, guid: 005d0534452f1ad40aac7065e284b80d, type: 3}
+      propertyPath: m_TagString
+      value: VenusFlyHitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 9129558013540487891, guid: 005d0534452f1ad40aac7065e284b80d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01
