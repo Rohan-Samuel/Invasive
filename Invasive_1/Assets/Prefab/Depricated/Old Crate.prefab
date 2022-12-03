@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 7676900154431888856}
   - component: {fileID: 3922285303052213905}
   m_Layer: 0
-  m_Name: Cabinet
+  m_Name: Old Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

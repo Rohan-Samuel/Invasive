@@ -209,7 +209,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.75
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -509,13 +509,19 @@ MonoBehaviour:
   savedOxygen: 0
   isGainingO2: 0
   oxygenReading: 0
+  oxSound: {fileID: 0}
   oxygenText: {fileID: 0}
   bottleText: {fileID: 0}
+  youDead: {fileID: 0}
+  youRespawn: {fileID: 0}
+  saveText: {fileID: 0}
+  pickupText: {fileID: 0}
   isAlive: 0
   killed: 0
   anim: {fileID: 0}
   RespawnUI: {fileID: 0}
   animatorHandler: {fileID: 0}
+  myTMP: {fileID: 0}
   rigidbody: {fileID: 0}
   audioLogs: 0
   audioSource: {fileID: 6681893026000905469}
