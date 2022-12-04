@@ -75,10 +75,7 @@ namespace RNS
         void Update()
         {
             activeAudioLog--;
-            if(Input.GetKeyDown(KeyCode.Mouse0)){
-                Screen.lockCursor = true;
-                Cursor.visible = false;
-            }
+
             if(activeAudioLog < 0){
                 pickupText.text = "";
             }
