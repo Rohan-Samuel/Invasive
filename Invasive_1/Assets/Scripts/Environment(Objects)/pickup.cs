@@ -13,6 +13,8 @@ public class pickup : MonoBehaviour
 
     public bool inRange = false;
     public bool consumable;
+
+    public int playerBottleCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,10 @@ public class pickup : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && inRange){
-            if(consumable)Destroy(gameObject);
+            if(pickupValue == 0){
+                if (playerBottleCount < 3)Destroy(gameObject);
+            }
+            else if(consumable)Destroy(gameObject);
         }
     }
 
@@ -38,6 +43,7 @@ public class pickup : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "NearPlayer"){
             inRange = true;
+            playerBottleCount = other.gameObject.GetComponent<pickupNearby>().getBottles();
             gameObject.GetComponent<Renderer>().material = grabbable;
             if(pickupValue == 0){
                 other.gameObject.GetComponent<pickupNearby>().pickupActivate(1,0);

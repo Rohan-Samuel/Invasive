@@ -9,6 +9,8 @@ public class pickupNearby : MonoBehaviour
     public GameObject mainPlayer;
 
     public GameObject audioLogUIBlock;
+
+    int bottleCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class pickupNearby : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bottleCount = mainPlayer.GetComponent<ThrowingHandle>().getBottleCount();
+
         if(nearbyBottles == -69)nearbyBottles = 0;
         
         if(Input.GetKeyDown(KeyCode.E)){
@@ -45,6 +49,9 @@ public class pickupNearby : MonoBehaviour
         else if (type == 1){
             audioLogID = value;
         }
+    }
+    public int getBottles(){
+        return bottleCount;
     }
 
 }
