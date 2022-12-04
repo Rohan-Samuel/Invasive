@@ -39,4 +39,10 @@ public class HeldButtonUnit : MonoBehaviour
             button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * 20;
         }
     }
+    public void startAuto(){
+            buttonSound.SetActive(true);
+            activated = true;
+            lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
+            button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;
+    }
 }

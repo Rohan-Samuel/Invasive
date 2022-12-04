@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace RNS
 {
@@ -176,10 +177,12 @@ namespace RNS
             else if(other.gameObject.tag == "Respawn")
             {
                 saveText.text = "Saving...";
-                respawnLocation = gameObject.transform.position;
-                savedOxygen = oxygen;
+                GameMaster.respawnLocation = gameObject.transform.position;
+                GameMaster.savedOxygen = oxygen;
+                if (oxygen < MIN_OXYGEN)GameMaster.savedOxygen = MIN_OXYGEN;
                 savedBottles = gameObject.GetComponent<ThrowingHandle>().getBottleCount();
                 if(savedBottles < 1)savedBottles = 1; 
+                GameMaster.bottleCount = savedBottles;
             }
             else if(other.gameObject.tag == "FungusZone"){
                 chokeZone = true;
@@ -211,7 +214,7 @@ namespace RNS
 
 
             if (Input.GetMouseButton(0)) {
-                gameObject.transform.position = respawnLocation;
+                /*gameObject.transform.position = respawnLocation;
                 anim.Play("Blend Tree");
 
                 if (gameObject.transform.position == respawnLocation)
@@ -226,6 +229,8 @@ namespace RNS
                     gameObject.GetComponent<ThrowingHandle>().setBottle(savedBottles);
                     anim.Play("Entry");
                 }
+                */
+                SceneManager.LoadScene(4);
             }
         }
 
