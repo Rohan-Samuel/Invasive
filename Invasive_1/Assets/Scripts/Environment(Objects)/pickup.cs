@@ -43,6 +43,7 @@ public class pickup : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "NearPlayer"){
             inRange = true;
+            playerBottleCount = other.gameObject.GetComponent<pickupNearby>().getBottles();
             gameObject.GetComponent<Renderer>().material = grabbable;
             if(pickupValue == 0){
                 other.gameObject.GetComponent<pickupNearby>().pickupActivate(1,0);
