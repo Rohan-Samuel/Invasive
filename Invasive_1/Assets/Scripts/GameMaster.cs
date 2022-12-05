@@ -8,12 +8,16 @@ public class GameMaster : MonoBehaviour
 
     public GameObject redButton, blueButton, purpleButton;
 
+    public GameObject redButtonRoom2, blueButtonRoomCrate, purpleButtonRoom1;
+
     public static bool firstSpawn = true;
     public static int bottleCount;
     public static float savedOxygen;
     public static Vector3 respawnLocation;
 
     public static bool firstLight = false, secondLight = false, thirdLight = false;
+
+    public static bool firstRoomPurple = false, crateRoomBlue = false, lobbyRoomRed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,16 @@ public class GameMaster : MonoBehaviour
             if(thirdLight){
                 purpleButton.gameObject.GetComponent<HeldButtonUnit>().startAuto();
             }
+
+            if(lobbyRoomRed){
+                redButtonRoom2.gameObject.GetComponent<oneTimeButton>().startAuto();
+            }
+            if(crateRoomBlue){
+                blueButtonRoomCrate.gameObject.GetComponent<oneTimeButtonBottle>().startAuto();
+            }
+            if(firstRoomPurple){
+                purpleButtonRoom1.gameObject.GetComponent<oneTimeButtonUnit>().startAuto();
+            }
         }
         else{
             firstSpawn = false;
@@ -44,5 +58,8 @@ public class GameMaster : MonoBehaviour
         if(redButton.gameObject.GetComponent<oneTimeButton>().activated)firstLight = true;
         if(blueButton.gameObject.GetComponent<oneTimeButtonBottle>().activated)secondLight = true;
         if(purpleButton.gameObject.GetComponent<HeldButtonUnit>().activated)thirdLight = true;
+        if(redButtonRoom2.gameObject.GetComponent<oneTimeButton>().activated)lobbyRoomRed = true;
+        if(blueButtonRoomCrate.gameObject.GetComponent<oneTimeButtonBottle>().activated)crateRoomBlue = true;
+        if(purpleButtonRoom1.gameObject.GetComponent<HeldButtonUnit>().activated)firstRoomPurple = true;
     }
 }
