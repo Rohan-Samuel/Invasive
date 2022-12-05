@@ -60,6 +60,6 @@ public class GameMaster : MonoBehaviour
         if(purpleButton.gameObject.GetComponent<HeldButtonUnit>().activated)thirdLight = true;
         if(redButtonRoom2.gameObject.GetComponent<oneTimeButton>().activated)lobbyRoomRed = true;
         if(blueButtonRoomCrate.gameObject.GetComponent<oneTimeButtonBottle>().activated)crateRoomBlue = true;
-        if(purpleButtonRoom1.gameObject.GetComponent<HeldButtonUnit>().activated)firstRoomPurple = true;
+        if(purpleButtonRoom1.gameObject.GetComponent<oneTimeButtonUnit>().activated)firstRoomPurple = true;
     }
 }
