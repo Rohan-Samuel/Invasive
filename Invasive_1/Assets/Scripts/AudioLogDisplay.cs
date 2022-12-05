@@ -7,6 +7,7 @@ public class AudioLogDisplay : MonoBehaviour
 {
     public GameObject audioLog1, audioLog2, audioLog3, audioLog4, audioLog5;
     bool active = false;
+    int readCounter = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,8 @@ public class AudioLogDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && active == true) modifyDisplay(0);
+        readCounter--;
+        if(Input.GetKeyDown(KeyCode.E) && active == true && readCounter < 0) modifyDisplay(0);
     }
     public void modifyDisplay(int i){
 
@@ -29,6 +31,7 @@ public class AudioLogDisplay : MonoBehaviour
 
         if(i > 0){
             active = true;
+            readCounter = 30;
             switch(i){
                 case 1:
                     audioLog1.SetActive(true);
