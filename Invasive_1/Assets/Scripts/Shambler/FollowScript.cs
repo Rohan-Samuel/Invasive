@@ -15,14 +15,14 @@ public class FollowScript : MonoBehaviour
     public int waitDuration;
     private int pauseTime;
     Vector3 startPoint;
-    Animator animator;
+    
     Animator animator2;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+       
         animator2 = GetComponentInChildren<Animator>();
         pauseTime = waitDuration;
         focuslevel = 0;
@@ -37,7 +37,7 @@ public class FollowScript : MonoBehaviour
         stunTimer--;
         huntTime--;
         if((target != null) && (huntTime > 0) && (stunTimer < 0)){
-            animator.SetTrigger("OnChase");
+           
             animator2.SetTrigger("OnChase");
 
             agent.SetDestination(target.position);
@@ -52,7 +52,7 @@ public class FollowScript : MonoBehaviour
             //Transform wp = startPoint;
                 if (Vector3.Distance(transform.position, startPoint)< 0.1f)
                 {
-                animator.SetTrigger("OnIdle");
+                //animator.SetTrigger("OnIdle");
                     // pauseTime--;
                     //if(pauseTime == 0){
                     //    pauseTime = waitDuration;
