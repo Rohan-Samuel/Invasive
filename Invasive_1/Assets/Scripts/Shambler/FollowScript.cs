@@ -15,11 +15,15 @@ public class FollowScript : MonoBehaviour
     public int waitDuration;
     private int pauseTime;
     Vector3 startPoint;
+    
+    Animator animator2;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
+        animator2 = GetComponentInChildren<Animator>();
         pauseTime = waitDuration;
         focuslevel = 0;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -33,7 +37,9 @@ public class FollowScript : MonoBehaviour
         stunTimer--;
         huntTime--;
         if((target != null) && (huntTime > 0) && (stunTimer < 0)){
-            
+           
+            animator2.SetTrigger("OnChase");
+
             agent.SetDestination(target.position);
             agent.transform.position = Vector3.MoveTowards(transform.position, target.position, (focuslevel*speed)/6  * Time.deltaTime);
             Vector3 doNotTurn = new Vector3(target.position.x, gameObject.transform.position.y, target.position.z);
@@ -46,6 +52,7 @@ public class FollowScript : MonoBehaviour
             //Transform wp = startPoint;
                 if (Vector3.Distance(transform.position, startPoint)< 0.1f)
                 {
+                //animator.SetTrigger("OnIdle");
                     // pauseTime--;
                     //if(pauseTime == 0){
                     //    pauseTime = waitDuration;
@@ -63,6 +70,7 @@ public class FollowScript : MonoBehaviour
             focuslevel = 0;
         }
         else {
+
             agent.transform.position = Vector3.MoveTowards(transform.position, transform.position, 0);
         }
     }
@@ -76,6 +84,8 @@ public class FollowScript : MonoBehaviour
             focuslevel = intensity;
         }
     }
+
+   
 
     public int getHuntTime(){
         return huntTime;

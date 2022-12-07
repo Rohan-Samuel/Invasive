@@ -31,7 +31,13 @@ public class Boss : MonoBehaviour
     {
         animator.SetTrigger("OnDeath");
         gameObject.layer = 6;
-        SceneManager.LoadScene(8);
+        Invoke("LoadEndScene", 6);
+        
 
+    }
+
+    void LoadEndScene()
+    {
+        SceneManager.LoadScene(8);
     }
 }

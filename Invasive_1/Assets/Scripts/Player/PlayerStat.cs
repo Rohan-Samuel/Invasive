@@ -124,7 +124,6 @@ namespace RNS
             UICharge = gameObject.GetComponent<ThrowingHandle>().getChargeCount();
 
             chargeBar.value = UICharge;
-            bottleText.text = UIBottles.ToString();
             
 
         }
