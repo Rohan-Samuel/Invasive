@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CheatBox : MonoBehaviour
 {
@@ -9,10 +11,11 @@ public class CheatBox : MonoBehaviour
 
     public GameObject player;
     public Transform[] respawnPoints;
+    public TextMeshProUGUI cheatText;
     // Start is called before the first frame update
     void Start()
     {
-        
+        cheatText.text = "";
     }
 
     // Update is called once per frame
@@ -111,7 +114,10 @@ public class CheatBox : MonoBehaviour
 
             if (cheatCounter == 8){
                 cheatsEnabled = true;
+                cheatText.text = "Cheats Enabled";
             } 
         }
+
+        
     }
 }
