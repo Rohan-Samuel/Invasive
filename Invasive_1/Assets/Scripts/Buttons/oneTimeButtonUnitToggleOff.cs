@@ -15,7 +15,6 @@ public class oneTimeButtonUnitToggleOff : MonoBehaviour
     void Start()
     {
         buttonSound.SetActive(false);
-        button.gameObject.transform.position += new Vector3(0,-1,0);
     }
 
     // Update is called once per frame
