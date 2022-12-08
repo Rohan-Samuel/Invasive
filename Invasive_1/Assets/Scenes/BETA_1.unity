@@ -37189,6 +37189,14 @@ PrefabInstance:
       propertyPath: hearingRange
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 7847791296530898767, guid: 4bb05df759964de4886309a0bb0df963, type: 3}
+      propertyPath: attackRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847791296530898767, guid: 4bb05df759964de4886309a0bb0df963, type: 3}
+      propertyPath: hearingRange
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bb05df759964de4886309a0bb0df963, type: 3}
 --- !u!1001 &214060666
