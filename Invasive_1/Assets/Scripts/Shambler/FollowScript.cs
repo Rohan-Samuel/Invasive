@@ -44,6 +44,9 @@ public class FollowScript : MonoBehaviour
             agent.transform.position = Vector3.MoveTowards(transform.position, target.position, (focuslevel*speed)/6  * Time.deltaTime);
             Vector3 doNotTurn = new Vector3(target.position.x, gameObject.transform.position.y, target.position.z);
             transform.LookAt(doNotTurn);
+
+            InvokeRepeating("Jump", 7, 9);
+
         }
         else if (stunTimer == 0){
             agent.speed = speed;
@@ -96,5 +99,10 @@ public class FollowScript : MonoBehaviour
             agent.speed = 0;
             Debug.Log("oww");
         }
+    }
+
+    public void Jump()
+    {
+        animator2.SetTrigger("OnLeap");
     }
 }
