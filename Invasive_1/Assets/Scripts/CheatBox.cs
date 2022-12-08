@@ -9,7 +9,7 @@ public class CheatBox : MonoBehaviour
     public bool cheatsEnabled = false;
     int cheatCounter;
 
-    public GameObject player;
+    public GameObject player, UI;
     public Transform[] respawnPoints;
     public TextMeshProUGUI cheatText;
     // Start is called before the first frame update
@@ -52,6 +52,9 @@ public class CheatBox : MonoBehaviour
             else if(Input.GetKeyDown(KeyCode.Alpha0)){
                 player.GetComponent<RNS.PlayerStat>().oxygen = 100;
                 player.GetComponent<ThrowingHandle>().bottles = 3;
+            }
+            else if(Input.GetKeyDown(KeyCode.P)){
+                UI.GetComponent<Canvas> ().enabled = false;
             }
         }
         else{
