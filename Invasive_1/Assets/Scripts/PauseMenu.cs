@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     bool pausing;
     
     public TextMeshProUGUI pauseText;
+
+    public GameObject ambient;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 1;
                 pausing = false;
                 pauseText.text = "";
+                ambient.SetActive(true);
             }
             else{
                 Time.timeScale = 0;
@@ -36,6 +39,7 @@ public class PauseMenu : MonoBehaviour
                 Screen.lockCursor = false;
                 Cursor.visible = true;
                 pauseText.text = "PAUSED";
+                ambient.SetActive(false);
             }
         }
     }
