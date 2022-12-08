@@ -39,7 +39,7 @@ public class oneTimeButtonUnitToggleOn : MonoBehaviour
             button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;
 
             otherButton.gameObject.GetComponent<oneTimeButtonUnitToggleOff>().otherButtonPressed();
-            //audioSource.PlayOneShot(audioSound, 0.5f);
+            audioSource.PlayOneShot(audioSound, 0.5f);
         }
     }
     public void otherButtonPressed(){

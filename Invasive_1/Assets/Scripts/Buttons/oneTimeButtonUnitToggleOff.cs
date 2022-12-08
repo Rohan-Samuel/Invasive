@@ -41,7 +41,7 @@ public class oneTimeButtonUnitToggleOff : MonoBehaviour
 
             otherButton.gameObject.GetComponent<oneTimeButtonUnitToggleOn>().otherButtonPressed();
 
-            //audioSource.PlayOneShot(audioSound, 0.5f);
+            audioSource.PlayOneShot(audioSound, 0.5f);
         }
     }
     public void otherButtonPressed(){

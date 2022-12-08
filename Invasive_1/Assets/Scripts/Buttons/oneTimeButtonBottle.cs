@@ -34,7 +34,7 @@ public class oneTimeButtonBottle : MonoBehaviour
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
             button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;
-           // audioSource.PlayOneShot(audioSound, 0.5f);
+            audioSource.PlayOneShot(audioSound, 0.5f);
         }
     }
     public void startAuto(){
