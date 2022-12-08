@@ -126407,6 +126407,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 952ee18e3ab25ef40bde5be873b3fd39, type: 3}
   m_PrefabInstance: {fileID: 638576131}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &638633338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8823135037670838804, guid: aa58279edd861c945b7daebc9670f856, type: 3}
+  m_PrefabInstance: {fileID: 146468890}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &638827378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219553,7 +219558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cheatsEnabled: 0
   player: {fileID: 2047667167}
-  UI: {fileID: 0}
+  UI: {fileID: 638633338}
   respawnPoints:
   - {fileID: 1103485175}
   - {fileID: 629066138}
