@@ -103,6 +103,9 @@ namespace RNS
                 focuslevel = 0;
                 target = GameObject.FindGameObjectWithTag("Player").transform;
             }
+            if (target == null){
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+            }
         }
 
         public void setTarget(Transform t, int intensity){
