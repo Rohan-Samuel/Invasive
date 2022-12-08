@@ -8,12 +8,15 @@ public class Boss : MonoBehaviour
 {
 
     public int health = 3;
+    public BoxCollider mouth;
 
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        mouth = GetComponentInChildren<BoxCollider>();
+       
     }
 
     // Update is called once per frame
@@ -25,7 +28,9 @@ public class Boss : MonoBehaviour
             
         }
     }
-    
+
+ 
+
 
     void OnDeath()
     {
