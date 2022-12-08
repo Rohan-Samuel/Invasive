@@ -2972,6 +2972,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: VenusFlytrapBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 7261906514083683940, guid: 4bb05df759964de4886309a0bb0df963, type: 3}
+      propertyPath: m_TagString
+      value: VenusFlyHitbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847791296530898767, guid: 4bb05df759964de4886309a0bb0df963, type: 3}
+      propertyPath: attackRange
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847791296530898767, guid: 4bb05df759964de4886309a0bb0df963, type: 3}
+      propertyPath: hearingRange
+      value: 17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bb05df759964de4886309a0bb0df963, type: 3}
 --- !u!1001 &8823135036239424450

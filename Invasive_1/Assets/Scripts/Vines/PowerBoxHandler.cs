@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PowerBoxHandler : MonoBehaviour
 {
-    public GameObject parent;
+    public Boss boss;
+    
     // public GameObject powSound;
    // Start is called before the first frame update
     void Start()
     {
         // powSound.SetActive(false);
-        parent = transform.parent.gameObject;
+        boss = GetComponentInParent<Boss>();
+
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class PowerBoxHandler : MonoBehaviour
         if (collision.gameObject.tag == "Power")
         {
 
-            parent.GetComponent<Boss>().health--;
+            boss.health--;
             // powSound.SetActive(true);
         }
     }
