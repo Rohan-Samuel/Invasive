@@ -11,10 +11,14 @@ public class oneTimeButton : MonoBehaviour
     public GameObject buttonSound;
 
     public GameObject top, bottom;
+
+    
+    public AudioSource audioSource; 
+    public AudioClip audioSound;
     // Start is called before the first frame update
     void Start()
     {
-        buttonSound.SetActive(false);
+        //buttonSound.SetActive(false);
         
     }
 
@@ -28,15 +32,15 @@ public class oneTimeButton : MonoBehaviour
         if(collision.gameObject.tag == "NearbyDude") Debug.Log("Detect Enemy");
         if((collision.gameObject.tag == "NearbyDude") && (activated == false))
         {
-            buttonSound.SetActive(true);
+           // buttonSound.SetActive(true);
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
             button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;
-            
+            //audioSource.PlayOneShot(audioSound, 0.5f);
         }
     }
     public void startAuto(){
-            buttonSound.SetActive(true);
+          //  buttonSound.SetActive(true);
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
             button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;

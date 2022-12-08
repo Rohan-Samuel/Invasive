@@ -12,6 +12,10 @@ public class oneTimeButtonUnitToggleOn : MonoBehaviour
     public GameObject gateSound;
 
     public GameObject otherButton;
+
+    
+    public AudioSource audioSource; 
+    public AudioClip audioSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +39,7 @@ public class oneTimeButtonUnitToggleOn : MonoBehaviour
             button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;
 
             otherButton.gameObject.GetComponent<oneTimeButtonUnitToggleOff>().otherButtonPressed();
+            //audioSource.PlayOneShot(audioSound, 0.5f);
         }
     }
     public void otherButtonPressed(){

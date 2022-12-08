@@ -9,6 +9,9 @@ public class oneTimeButtonUnit : MonoBehaviour
     public GameObject lightBulb;
     public GameObject button;
     public GameObject buttonSound;
+
+    public AudioSource audioSource; 
+    public AudioClip audioSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +35,7 @@ public class oneTimeButtonUnit : MonoBehaviour
             activated = true;
             lightBulb.gameObject.GetComponent<LightToggle>().toggleColor();
             button.gameObject.transform.position += button.gameObject.transform.up * Time.deltaTime * -20;
-            
+            //audioSource.PlayOneShot(audioSound, 0.5f);
 
         }
       
