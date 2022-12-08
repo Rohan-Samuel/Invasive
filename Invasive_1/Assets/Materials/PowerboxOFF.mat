@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shambler
+  m_Name: PowerboxOFF
   m_Shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _METALLICGLOSSMAP
@@ -44,23 +44,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5ff2ba39c6a41cb4bae44de603c32788, type: 3}
+        m_Texture: {fileID: 2800000, guid: 28b805148d0f3d348b6ffed5027e196e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 37d33562b2a8e9f47adc40a6382f30c5, type: 3}
+        m_Texture: {fileID: 2800000, guid: adffd57c2f35fc649a55d014b00d811a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: ee75cafb034e0ca429a241402e5115f9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1aaf651c5e989d94c8a4e498c9e15dd3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: e7fb52c59dca1cc4daf33cdacd026371, type: 3}
+        m_Texture: {fileID: 2800000, guid: abab8f45b0165e848b9ed63e4fb63bc6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: b3d2c0a0d1766a945ae3e09849eb11d7, type: 3}
+        m_Texture: {fileID: 2800000, guid: dc6c7a786f23e2a46917f537b1ef8cf0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -75,7 +75,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
+    - _Parallax: 0.0204
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
