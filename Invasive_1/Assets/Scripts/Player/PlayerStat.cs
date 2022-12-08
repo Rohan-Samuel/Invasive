@@ -54,6 +54,9 @@ namespace RNS
 
         bool chokeZone = false;
 
+        public GameObject audioSourceLowO2; 
+        public GameObject audioSourceFungalZone; 
+
         // Start is called before the first frame update
         void Start()
         {
@@ -102,14 +105,28 @@ namespace RNS
                 oxygen -= Time.deltaTime*1;
                 if(chokeZone){
                     oxygen -= Time.deltaTime*3;
+                    audioSourceFungalZone.SetActive(true);
                 }
+                else{
+                    audioSourceFungalZone.SetActive(false);
+                }
+
                 isAlive = true;
+
+                if(oxygen < 20){
+                    audioSourceLowO2.SetActive(true);
+                }
+                else{
+                    audioSourceLowO2.SetActive(false);
+                }
             }
             
 
             if (oxygen <=0)
             {
                 isAlive = false;
+                audioSourceFungalZone.SetActive(false);
+                audioSourceLowO2.SetActive(false);
             }
             //Debug.Log(isAlive);//
 
