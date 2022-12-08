@@ -11,6 +11,9 @@ public class Boss : MonoBehaviour
     public BoxCollider mouth;
 
     private Animator animator;
+
+    public AudioSource audioSource; 
+    public AudioClip audioSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,8 @@ public class Boss : MonoBehaviour
 
     void OnDeath()
     {
+        
+        audioSource.PlayOneShot(audioSound, 0.1f);
         animator.SetTrigger("OnDeath");
         gameObject.layer = 6;
         Invoke("LoadEndScene", 6);
@@ -43,6 +48,8 @@ public class Boss : MonoBehaviour
 
     void LoadEndScene()
     {
+        Screen.lockCursor = false;
+        Cursor.visible = true;
         SceneManager.LoadScene(8);
     }
 }

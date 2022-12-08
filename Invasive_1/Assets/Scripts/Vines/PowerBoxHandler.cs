@@ -8,6 +8,8 @@ public class PowerBoxHandler : MonoBehaviour
     
     // public GameObject powSound;
    // Start is called before the first frame update
+    public AudioSource audioSource; 
+    public AudioClip audioSound;
     void Start()
     {
         // powSound.SetActive(false);
@@ -26,7 +28,7 @@ public class PowerBoxHandler : MonoBehaviour
     {
         if (collision.gameObject.tag == "Power")
         {
-
+            audioSource.PlayOneShot(audioSound, 0.5f);
             boss.health--;
             // powSound.SetActive(true);
         }
